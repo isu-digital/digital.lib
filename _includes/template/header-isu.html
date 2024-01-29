@@ -1,0 +1,81 @@
+<header class="site-header site-header--ecosystem">
+    <div class="site-header__top">
+        <div class="site-header__logo-name-wrap">
+            <a href="https://www.iastate.edu/" class="site-header__logo site-header__logo-no-parent-unit">
+                <img src="https://www.lib.iastate.edu/themes/custom/iastate2022/img/iowa-state-university-logo-no-tagline-red.svg"
+                    alt="Iowa State University" loading="lazy" width="224" height="17">
+            </a>
+            <a class="site-header__parent-unit-name" href="https://www.lib.iastate.edu/">University Library</a>
+        </div>
+        <div class="site-header__website-title"><a href="/">{{ site.title }}</a></div>
+        {% if site.search == true %}
+        <script>
+            function site_search() {
+                var query = document.getElementById("site-search").value;
+                window.open("{{ '/search.html' | relative_url }}?q=" + encodeURIComponent(query), "_self" );
+                }
+        </script>
+        <form class="d-flex" onsubmit="site_search(); return false;">
+            <div class="input-group">
+                <input id="site-search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-primary" type="submit">{% include icon.html icon="search" label="Submit Search" %}</button>
+            </div>
+        </form>
+        {% endif %}
+    </div>
+    <div class="site-header__main">
+
+        <a href="#site-header-mega-menu" class="site-header__mega-menu-open" role="button"
+            aria-controls="site-header-mega-menu">
+            <span class="visible-for-screen-readers">Toggle Menu</span>
+            <span class="site-header__mega-menu-open-line-wrap">
+                <span></span>
+                <span></span>
+                <span></span>
+            </span>
+        </a>
+        <div class="site-header__mega-menu" id="site-header-mega-menu">
+            <div class="site-header__mega-menu-inner">
+                <div class="site-header__mega-menu-scroller">
+                    <noscript>
+                        <a href="#" role="button" class="nojs-close-menu">Close Main Menu</a>
+                    </noscript>
+                    <div>
+                        <div class="site-header__mega-menu-main">
+                            <div class="site-header__mega-menu-max-bound">
+                                <div class="site-header__website-title"><a href="/">{{ site.title }}</a></div>
+                                <nav class="site-header__mega-menu-main-nav" aria-label="Main">
+                                    <ul>
+                                        {% assign nav_pages = site.html_pages | where_exp: 'p','p.nav' | sort: 'nav_order' %}
+                                        {% for p in nav_pages %}
+                                        <li>
+                                            <a class="site-header__parent-link-no-subnav" href="{{ p.url | relative_url }}">{{ p.nav }}</a>
+                                        </li>
+                                        {% endfor %}
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="site-header__mega-menu-secondary">
+                            <div class="site-header__mega-menu-max-bound">
+                                <nav class="site-header__mega-menu-utility" aria-label="Utility">
+
+                                    <form class="site-header__search-form-mobile" method="get"
+                                        action="https://cse.google.com/cse">
+                                        <label class="visible-for-screen-readers" for="searchMobile">Search</label>
+                                        <input type="search" id="searchMobile" name="q" placeholder="Search">
+                                        <input type="hidden" name="cx" value="016927462813702242193:8p5vicgtdx4"> <input
+                                            type="hidden" name="as_sitesearch" value="  "> <button type="submit"><span
+                                                class="fak fa-iastate22-magnifying-glass"
+                                                aria-hidden="true"></span><span
+                                                class="visible-for-screen-readers">Submit Search</span></button>
+                                    </form>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

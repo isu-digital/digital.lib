@@ -1,0 +1,21 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+{% if site.description %}<meta name="description" content="{{ site.description }}">{% endif %}
+{% if site.author %}<meta name="author" content="{{ site.author }}">{% endif %}
+<meta name="generator" content="isu-digital/digital.lib">
+<link rel="shortcut icon" type="image/x-icon" href="{{ '/favicon.ico' | relative_url }}">
+
+<link rel="stylesheet" href="{{ '/assets/lib/bootstrap.min.css' | relative_url }}">
+{% if page.head %}{% include {{ page.head }} %}{% endif %}
+{% if layout.head %}{% include {{ layout.head }} %}{% endif %}
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" type="text/css">
+<link rel="stylesheet" href="{{ '/assets/css/iastatecolors.css' | relative_url }}" type="text/css">
+<link rel="stylesheet" href="{{ '/assets/css/iastatecustom3.css' | relative_url }}" type="text/css">
+<link rel="stylesheet" href="{{ '/assets/css/iastatecustom6.css' | relative_url }}" type="text/css">
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+
+{% if site.noindex == true or page.noindex == true %}<meta name="robots" content="noindex">{% endif %}
+{% include template/analytics.html %}
+<!-- Last build date: {{ site.time | date: "%Y-%m-%d" }} -->

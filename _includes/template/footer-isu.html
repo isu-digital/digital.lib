@@ -1,0 +1,50 @@
+<footer class="site-footer site-footer--ecosystem">
+    
+        <div class="row d-flex">
+            <div class="col-md-8">
+               <div class="site-footer__logo-social-links-wrap">
+                    <a href="https://www.iastate.edu" class="site-footer__logo">
+                        <img src="https://www.lib.iastate.edu/themes/custom/iastate2022/img/iowa-state-university-logo-with-tagline-sci-tech.svg"
+                            alt="Iowa State University of Science and Technology" loading="lazy" width="516" height="69">
+                    </a>
+                </div>
+
+                <nav class="site-footer__primary-nav" aria-label="Footer Primary">
+                    <ul>
+                        <li>
+                            <a class="label-text" href="/">Digital Scholarship and Initiatives</a>
+                        </li>
+                        {% assign nav_pages = site.html_pages | where_exp: 'p','p.nav' | sort: 'nav_order' %}
+                        {% for p in nav_pages %}
+                        <li>
+                            <a class="label-text" href="{{ p.url | relative_url }}">{{ p.nav }}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </nav>          
+            </div>
+
+            <div class="col-md-4 d-flex justify-content-end text-white site_footer-address">
+                <p>
+                    <a href="https://www.lib.iastate.edu/visit-and-study/creation-and-learning-spaces/catalyst" class="text-white">The Catalyst</a>, Room 199<br>
+                    University Library<br>
+                    701 Morrill Rd<br>
+                    Ames, IA 50011-2102
+                </p>
+            </div>
+        </div>
+
+    <div class="site-footer__bottom-wrap">
+        <nav class="site-footer__utility-nav" aria-label="Footer Utility">
+            <ul>
+                <li><a href="https://www.iastate.edu/disclaimers-and-terms">Privacy Policy</a></li>
+                <li><a href="https://www.policy.iastate.edu/policy/discrimination">Non-discrimination Policy</a></li>
+                <li><a href="https://www.digitalaccess.iastate.edu/">Digital Access and Accessibility</a></li>
+                <li><a href="https://www.iastate.edu/consumer-information">Consumer Information</a></li>
+            </ul>
+        </nav>
+        <div class="site-footer__copyright">
+            <p>&copy; Iowa State University of Science and Technology</p>
+        </div>
+    </div>
+</footer>

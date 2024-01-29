@@ -1,0 +1,7 @@
+<!-- Bootstrap JS bundle -->
+<script src="{{ '/assets/lib/bootstrap.bundle.min.js' | relative_url }}"></script>
+<!-- load other optional js -->
+<script src="https://kit.fontawesome.com/b658fac974.js" crossorigin="anonymous"></script>
+{% if page.foot %}{% include {{ page.foot }} %}{% endif %}
+{% if layout.foot %}{% include {{ layout.foot }} %}{% endif %}
+{% include template/scroll-to-top.html %}

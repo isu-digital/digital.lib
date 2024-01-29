@@ -1,0 +1,12 @@
+h1 {
+    font-size: 3.5rem;
+    line-height: 1.125;
+}
+
+#feedback .iastate22-button {
+    background-color: #fff;
+}
+
+#feedback .iastate22-button:hover {
+    background-color: #7c2529;
+}
