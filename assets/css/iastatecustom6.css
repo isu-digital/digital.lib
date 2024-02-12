@@ -10,3 +10,15 @@ h1 {
 #feedback .iastate22-button:hover {
     background-color: #7c2529;
 }
+
+.site-header__main li {
+    list-style-type: none !important;
+}
+
+.site-header__main a {
+    text-decoration: none;
+}
+
+.site-footer li {
+    list-style-type: none !important;
+}
