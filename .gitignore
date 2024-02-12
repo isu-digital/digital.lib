@@ -14,5 +14,6 @@ vendor/
 # temporarily ignore gemfile.lock
 Gemfile.lock
 
-# temporarily ignore docs
+# temporarily ignore docs and extra css
 docs/
+assets/css/other/
