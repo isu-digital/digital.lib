@@ -4,21 +4,23 @@ layout: page
 
 {% assign people = site.data.dsi-people %}
 
-<div class="row">
-    {% for p in people %}
-    <div class="col-md-3">
-      <div class="card my-4">
-        <img src="{{ p.image }}" class="card-img-top" alt="image of {{ p.name }}">
-        <div class="card-body">
-          <h5 class="card-title">{{ p.name }}</h5>
-          <p class="card-text">{{ p.title }}</p>
-        </div>
-        <div class="card-footer">
-          <small class="text-muted">{{ p.email }}</small>
-        </div>
-      </div>
+{% for p in people %}
+
+<div class="row pt-4 pb-5 align-items-center">
+    <div class="col-md-4 text-center">
+        <img class="img-fluid rounded-circle lazyload w-50" alt="image of {{ p.name }}" src="{{ p.image }}">
     </div>
-    {% endfor %}
+    <div class="col-md-8">
+        <p><strong>{{ p.name }}</strong> is [bio/expertise, etc.].
+        <br>
+        <a href="mailto:{{ p.email }}">{{ p.email }}</a>
+        {% if p.phone %}{{ p.phone }}{% endif %}
+        <br>
+        {% if p.blog-page %}<a href="{{ p.name | slugify | append: '.html' | prepend: 'blog/' | relative_url }}">Blog</a>{% endif %}
+        </p>
+    </div>
 </div>
+
+{% endfor %}
 
 {{ content }}
