@@ -11,7 +11,7 @@
     --iastate-blue: #006ba6;
     --iastate-light-blue: #7a99ac;
     --iastate-maroon: #7c2529;
-    --iastate-dark-red: #7c2529;
+    --: #7c2529;
     --iastate-dark-orange: #9a3324;
     --iastate-orange: #be531c;
     --iastate-brown: #8b5b29;
@@ -54,376 +54,6 @@
     --grey-9: #999999;
     --grey-6: #666666;
     --grey-3: #333333;
-}
-
-.iastate-red, .text-iastate-red, .text-iastate-red :is(h1, h2, h3, h4, h5, h6), .link-iastate-red a, .link-hover-iastate-red a:focus, .link-hover-iastate-red a:hover, a.link-iastate-red, a.link-hover-iastate-red:focus, a.link-hover-iastate-red:hover {
-    color: #c8102e !important;
-}
-
-.bg-iastate-red, .bg-hover-iastate-red:focus, .bg-hover-iastate-red:hover {
-    background-color: #c8102e !important;
-}
-
-.bg-iastate-red-75 {
-    background-color: rgba(200, 16, 46, 0.75) !important;
-}
-
-.bg-iastate-red-50 {
-    background-color: rgba(200, 16, 46, 0.5) !important;
-}
-
-.bg-iastate-red-25 {
-    background-color: rgba(200, 16, 46, 0.25) !important;
-}
-
-.fill-iastate-red {
-    fill: #c8102e !important;
-}
-
-.fill-iastate-red-75 {
-    fill: rgba(200, 16, 46, 0.75) !important;
-}
-
-.fill-iastate-red-50 {
-    fill: rgba(200, 16, 46, 0.5) !important;
-}
-
-.fill-iastate-red-25 {
-    fill: rgba(200, 16, 46, 0.25) !important;
-}
-
-.border-iastate-red {
-    border-color: #c8102e !important;
-}
-
-.border-iastate-red-75 {
-    border-color: rgba(200, 16, 46, 0.75) !important;
-}
-
-.border-iastate-red-50 {
-    border-color: rgba(200, 16, 46, 0.5) !important;
-}
-
-.border-iastate-red-25 {
-    border-color: rgba(200, 16, 46, 0.25) !important;
-}
-
-.stroke-iastate-red {
-    stroke: #c8102e !important;
-}
-
-.stroke-iastate-red-75 {
-    stroke: rgba(200, 16, 46, 0.75) !important;
-}
-
-.stroke-iastate-red-50 {
-    stroke: rgba(200, 16, 46, 0.5) !important;
-}
-
-.stroke-iastate-red-25 {
-    stroke: rgba(200, 16, 46, 0.25) !important;
-}
-
-.shadow-iastate-red {
-    --c: drop-shadow(10px 10px #c8102e);
-    -webkit-filter: var(--c);
-    filter: var(--c);
-}
-
-.iastate-gold, .text-iastate-gold, .text-iastate-gold :is(h1, h2, h3, h4, h5, h6), .link-iastate-gold a, .link-hover-iastate-gold a:focus, .link-hover-iastate-gold a:hover, a.link-iastate-gold, a.link-hover-iastate-gold:focus, a.link-hover-iastate-gold:hover {
-    color: #f1be48 !important;
-}
-
-.bg-iastate-gold, .bg-hover-iastate-gold:focus, .bg-hover-iastate-gold:hover {
-    background-color: #f1be48 !important;
-}
-
-.bg-iastate-gold-75 {
-    background-color: rgba(241, 190, 72, 0.75) !important;
-}
-
-.bg-iastate-gold-50 {
-    background-color: rgba(241, 190, 72, 0.5) !important;
-}
-
-.bg-iastate-gold-25 {
-    background-color: rgba(241, 190, 72, 0.25) !important;
-}
-
-.fill-iastate-gold {
-    fill: #f1be48 !important;
-}
-
-.fill-iastate-gold-75 {
-    fill: rgba(241, 190, 72, 0.75) !important;
-}
-
-.fill-iastate-gold-50 {
-    fill: rgba(241, 190, 72, 0.5) !important;
-}
-
-.fill-iastate-gold-25 {
-    fill: rgba(241, 190, 72, 0.25) !important;
-}
-
-.border-iastate-gold {
-    border-color: #f1be48 !important;
-}
-
-.border-iastate-gold-75 {
-    border-color: rgba(241, 190, 72, 0.75) !important;
-}
-
-.border-iastate-gold-50 {
-    border-color: rgba(241, 190, 72, 0.5) !important;
-}
-
-.border-iastate-gold-25 {
-    border-color: rgba(241, 190, 72, 0.25) !important;
-}
-
-.stroke-iastate-gold {
-    stroke: #f1be48 !important;
-}
-
-.stroke-iastate-gold-75 {
-    stroke: rgba(241, 190, 72, 0.75) !important;
-}
-
-.stroke-iastate-gold-50 {
-    stroke: rgba(241, 190, 72, 0.5) !important;
-}
-
-.stroke-iastate-gold-25 {
-    stroke: rgba(241, 190, 72, 0.25) !important;
-}
-
-.shadow-iastate-gold {
-    --c: drop-shadow(10px 10px #f1be48);
-    -webkit-filter: var(--c);
-    filter: var(--c);
-}
-
-.iastate-dark-khaki, .text-iastate-dark-khaki, .text-iastate-dark-khaki :is(h1, h2, h3, h4, h5, h6), .link-iastate-dark-khaki a, .link-hover-iastate-dark-khaki a:focus, .link-hover-iastate-dark-khaki a:hover, a.link-iastate-dark-khaki, a.link-hover-iastate-dark-khaki:focus, a.link-hover-iastate-dark-khaki:hover {
-    color: #524727 !important;
-}
-
-.bg-iastate-dark-khaki, .bg-hover-iastate-dark-khaki:focus, .bg-hover-iastate-dark-khaki:hover {
-    background-color: #524727 !important;
-}
-
-.bg-iastate-dark-khaki-75 {
-    background-color: rgba(82, 71, 39, 0.75) !important;
-}
-
-.bg-iastate-dark-khaki-50 {
-    background-color: rgba(82, 71, 39, 0.5) !important;
-}
-
-.bg-iastate-dark-khaki-25 {
-    background-color: rgba(82, 71, 39, 0.25) !important;
-}
-
-.fill-iastate-dark-khaki {
-    fill: #524727 !important;
-}
-
-.fill-iastate-dark-khaki-75 {
-    fill: rgba(82, 71, 39, 0.75) !important;
-}
-
-.fill-iastate-dark-khaki-50 {
-    fill: rgba(82, 71, 39, 0.5) !important;
-}
-
-.fill-iastate-dark-khaki-25 {
-    fill: rgba(82, 71, 39, 0.25) !important;
-}
-
-.border-iastate-dark-khaki {
-    border-color: #524727 !important;
-}
-
-.border-iastate-dark-khaki-75 {
-    border-color: rgba(82, 71, 39, 0.75) !important;
-}
-
-.border-iastate-dark-khaki-50 {
-    border-color: rgba(82, 71, 39, 0.5) !important;
-}
-
-.border-iastate-dark-khaki-25 {
-    border-color: rgba(82, 71, 39, 0.25) !important;
-}
-
-.stroke-iastate-dark-khaki {
-    stroke: #524727 !important;
-}
-
-.stroke-iastate-dark-khaki-75 {
-    stroke: rgba(82, 71, 39, 0.75) !important;
-}
-
-.stroke-iastate-dark-khaki-50 {
-    stroke: rgba(82, 71, 39, 0.5) !important;
-}
-
-.stroke-iastate-dark-khaki-25 {
-    stroke: rgba(82, 71, 39, 0.25) !important;
-}
-
-.shadow-iastate-dark-khaki {
-    --c: drop-shadow(10px 10px #524727);
-    -webkit-filter: var(--c);
-    filter: var(--c);
-}
-
-.iastate-khaki, .text-iastate-khaki, .text-iastate-khaki :is(h1, h2, h3, h4, h5, h6), .link-iastate-khaki a, .link-hover-iastate-khaki a:focus, .link-hover-iastate-khaki a:hover, a.link-iastate-khaki, a.link-hover-iastate-khaki:focus, a.link-hover-iastate-khaki:hover {
-    color: #9b945f !important;
-}
-
-.bg-iastate-khaki, .bg-hover-iastate-khaki:focus, .bg-hover-iastate-khaki:hover {
-    background-color: #9b945f !important;
-}
-
-.bg-iastate-khaki-75 {
-    background-color: rgba(155, 148, 95, 0.75) !important;
-}
-
-.bg-iastate-khaki-50 {
-    background-color: rgba(155, 148, 95, 0.5) !important;
-}
-
-.bg-iastate-khaki-25 {
-    background-color: rgba(155, 148, 95, 0.25) !important;
-}
-
-.fill-iastate-khaki {
-    fill: #9b945f !important;
-}
-
-.fill-iastate-khaki-75 {
-    fill: rgba(155, 148, 95, 0.75) !important;
-}
-
-.fill-iastate-khaki-50 {
-    fill: rgba(155, 148, 95, 0.5) !important;
-}
-
-.fill-iastate-khaki-25 {
-    fill: rgba(155, 148, 95, 0.25) !important;
-}
-
-.border-iastate-khaki {
-    border-color: #9b945f !important;
-}
-
-.border-iastate-khaki-75 {
-    border-color: rgba(155, 148, 95, 0.75) !important;
-}
-
-.border-iastate-khaki-50 {
-    border-color: rgba(155, 148, 95, 0.5) !important;
-}
-
-.border-iastate-khaki-25 {
-    border-color: rgba(155, 148, 95, 0.25) !important;
-}
-
-.stroke-iastate-khaki {
-    stroke: #9b945f !important;
-}
-
-.stroke-iastate-khaki-75 {
-    stroke: rgba(155, 148, 95, 0.75) !important;
-}
-
-.stroke-iastate-khaki-50 {
-    stroke: rgba(155, 148, 95, 0.5) !important;
-}
-
-.stroke-iastate-khaki-25 {
-    stroke: rgba(155, 148, 95, 0.25) !important;
-}
-
-.shadow-iastate-khaki {
-    --c: drop-shadow(10px 10px #9b945f);
-    -webkit-filter: var(--c);
-    filter: var(--c);
-}
-
-.iastate-light-khaki, .text-iastate-light-khaki, .text-iastate-light-khaki :is(h1, h2, h3, h4, h5, h6), .link-iastate-light-khaki a, .link-hover-iastate-light-khaki a:focus, .link-hover-iastate-light-khaki a:hover, a.link-iastate-light-khaki, a.link-hover-iastate-light-khaki:focus, a.link-hover-iastate-light-khaki:hover {
-    color: #cac7a7 !important;
-}
-
-.bg-iastate-light-khaki, .bg-hover-iastate-light-khaki:focus, .bg-hover-iastate-light-khaki:hover {
-    background-color: #cac7a7 !important;
-}
-
-.bg-iastate-light-khaki-75 {
-    background-color: rgba(202, 199, 167, 0.75) !important;
-}
-
-.bg-iastate-light-khaki-50 {
-    background-color: rgba(202, 199, 167, 0.5) !important;
-}
-
-.bg-iastate-light-khaki-25 {
-    background-color: rgba(202, 199, 167, 0.25) !important;
-}
-
-.fill-iastate-light-khaki {
-    fill: #cac7a7 !important;
-}
-
-.fill-iastate-light-khaki-75 {
-    fill: rgba(202, 199, 167, 0.75) !important;
-}
-
-.fill-iastate-light-khaki-50 {
-    fill: rgba(202, 199, 167, 0.5) !important;
-}
-
-.fill-iastate-light-khaki-25 {
-    fill: rgba(202, 199, 167, 0.25) !important;
-}
-
-.border-iastate-light-khaki {
-    border-color: #cac7a7 !important;
-}
-
-.border-iastate-light-khaki-75 {
-    border-color: rgba(202, 199, 167, 0.75) !important;
-}
-
-.border-iastate-light-khaki-50 {
-    border-color: rgba(202, 199, 167, 0.5) !important;
-}
-
-.border-iastate-light-khaki-25 {
-    border-color: rgba(202, 199, 167, 0.25) !important;
-}
-
-.stroke-iastate-light-khaki {
-    stroke: #cac7a7 !important;
-}
-
-.stroke-iastate-light-khaki-75 {
-    stroke: rgba(202, 199, 167, 0.75) !important;
-}
-
-.stroke-iastate-light-khaki-50 {
-    stroke: rgba(202, 199, 167, 0.5) !important;
-}
-
-.stroke-iastate-light-khaki-25 {
-    stroke: rgba(202, 199, 167, 0.25) !important;
-}
-
-.shadow-iastate-light-khaki {
-    --c: drop-shadow(10px 10px #cac7a7);
-    -webkit-filter: var(--c);
-    filter: var(--c);
 }
 
 .iastate-dark-green, .text-iastate-dark-green, .text-iastate-dark-green :is(h1, h2, h3, h4, h5, h6), .link-iastate-dark-green a, .link-hover-iastate-dark-green a:focus, .link-hover-iastate-dark-green a:hover, a.link-iastate-dark-green, a.link-hover-iastate-dark-green:focus, a.link-hover-iastate-dark-green:hover {
@@ -944,75 +574,75 @@
     filter: var(--c);
 }
 
-.iastate-dark-red, .text-iastate-dark-red, .text-iastate-dark-red :is(h1, h2, h3, h4, h5, h6), .link-iastate-dark-red a, .link-hover-iastate-dark-red a:focus, .link-hover-iastate-dark-red a:hover, a.link-iastate-dark-red, a.link-hover-iastate-dark-red:focus, a.link-hover-iastate-dark-red:hover {
+., .text-, .text- :is(h1, h2, h3, h4, h5, h6), .link- a, .link-hover- a:focus, .link-hover- a:hover, a.link-, a.link-hover-:focus, a.link-hover-:hover {
     color: #7c2529 !important;
 }
 
-.bg-iastate-dark-red, .bg-hover-iastate-dark-red:focus, .bg-hover-iastate-dark-red:hover {
+.bg-, .bg-hover-:focus, .bg-hover-:hover {
     background-color: #7c2529 !important;
 }
 
-.bg-iastate-dark-red-75 {
+.bg--75 {
     background-color: rgba(124, 37, 41, 0.75) !important;
 }
 
-.bg-iastate-dark-red-50 {
+.bg--50 {
     background-color: rgba(124, 37, 41, 0.5) !important;
 }
 
-.bg-iastate-dark-red-25 {
+.bg--25 {
     background-color: rgba(124, 37, 41, 0.25) !important;
 }
 
-.fill-iastate-dark-red {
+.fill- {
     fill: #7c2529 !important;
 }
 
-.fill-iastate-dark-red-75 {
+.fill--75 {
     fill: rgba(124, 37, 41, 0.75) !important;
 }
 
-.fill-iastate-dark-red-50 {
+.fill--50 {
     fill: rgba(124, 37, 41, 0.5) !important;
 }
 
-.fill-iastate-dark-red-25 {
+.fill--25 {
     fill: rgba(124, 37, 41, 0.25) !important;
 }
 
-.border-iastate-dark-red {
+.border- {
     border-color: #7c2529 !important;
 }
 
-.border-iastate-dark-red-75 {
+.border--75 {
     border-color: rgba(124, 37, 41, 0.75) !important;
 }
 
-.border-iastate-dark-red-50 {
+.border--50 {
     border-color: rgba(124, 37, 41, 0.5) !important;
 }
 
-.border-iastate-dark-red-25 {
+.border--25 {
     border-color: rgba(124, 37, 41, 0.25) !important;
 }
 
-.stroke-iastate-dark-red {
+.stroke- {
     stroke: #7c2529 !important;
 }
 
-.stroke-iastate-dark-red-75 {
+.stroke--75 {
     stroke: rgba(124, 37, 41, 0.75) !important;
 }
 
-.stroke-iastate-dark-red-50 {
+.stroke--50 {
     stroke: rgba(124, 37, 41, 0.5) !important;
 }
 
-.stroke-iastate-dark-red-25 {
+.stroke--25 {
     stroke: rgba(124, 37, 41, 0.25) !important;
 }
 
-.shadow-iastate-dark-red {
+.shadow- {
     --c: drop-shadow(10px 10px #7c2529);
     -webkit-filter: var(--c);
     filter: var(--c);
@@ -2058,22 +1688,6 @@
     color: #9ac4dc !important;
 }
 
-.bg-extra-light-blue, .bg-hover-extra-light-blue:focus, .bg-hover-extra-light-blue:hover {
-    background-color: #9ac4dc !important;
-}
-
-.bg-extra-light-blue-75 {
-    background-color: rgba(154, 196, 220, 0.75) !important;
-}
-
-.bg-extra-light-blue-50 {
-    background-color: rgba(154, 196, 220, 0.5) !important;
-}
-
-.bg-extra-light-blue-25 {
-    background-color: rgba(154, 196, 220, 0.25) !important;
-}
-
 .fill-extra-light-blue {
     fill: #9ac4dc !important;
 }
@@ -2130,22 +1744,6 @@
 
 .light-grey, .color-light-grey, .color-light-grey :is(h1, h2, h3, h4, h5, h6), .text-light-grey, .text-light-grey :is(h1, h2, h3, h4, h5, h6), .link-light-grey a, .link-hover-light-grey a:focus, .link-hover-light-grey a:hover, a.link-light-grey, a.link-hover-light-grey:focus, a.link-hover-light-grey:hover {
     color: #f3f3f3 !important;
-}
-
-.bg-light-grey, .bg-hover-light-grey:focus, .bg-hover-light-grey:hover {
-    background-color: #f3f3f3 !important;
-}
-
-.bg-light-grey-75 {
-    background-color: rgba(243, 243, 243, 0.75) !important;
-}
-
-.bg-light-grey-50 {
-    background-color: rgba(243, 243, 243, 0.5) !important;
-}
-
-.bg-light-grey-25 {
-    background-color: rgba(243, 243, 243, 0.25) !important;
 }
 
 .border-light-grey {
