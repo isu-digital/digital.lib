@@ -2148,22 +2148,6 @@
     background-color: rgba(243, 243, 243, 0.25) !important;
 }
 
-.fill-light-grey {
-    fill: #f3f3f3 !important;
-}
-
-.fill-light-grey-75 {
-    fill: rgba(243, 243, 243, 0.75) !important;
-}
-
-.fill-light-grey-50 {
-    fill: rgba(243, 243, 243, 0.5) !important;
-}
-
-.fill-light-grey-25 {
-    fill: rgba(243, 243, 243, 0.25) !important;
-}
-
 .border-light-grey {
     border-color: #f3f3f3 !important;
 }
