@@ -57,11 +57,19 @@ Horizontal rule:
 > Is like this.
 {:.blockquote}
 
-### A Table
+### A Table for Critters
 
-| header | column a | column b |
+| header | first critter | second critter |
 | --- | --- | --- |
-| dogs | 3 | 6 |
-| cats | 3 | 6 |
-| muffins | 15 | 30 |
+| dogs | Maho | Nelly |
+| cats | DJ Jazzy | lily |
 {:.table .table-striped}
+
+### A Table for Truth
+
+| Below statement | is | truth! |
+| --- | --- | --- | --- |
+| Muffins | are | (this cell added) | evil. |
+{:.table .table-striped}
+
+
