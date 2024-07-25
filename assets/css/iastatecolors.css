@@ -64,64 +64,16 @@
     background-color: #7c2529 !important;
 }
 
-.bg--75 {
-    background-color: rgba(124, 37, 41, 0.75) !important;
-}
-
-.bg--50 {
-    background-color: rgba(124, 37, 41, 0.5) !important;
-}
-
-.bg--25 {
-    background-color: rgba(124, 37, 41, 0.25) !important;
-}
-
 .fill- {
     fill: #7c2529 !important;
-}
-
-.fill--75 {
-    fill: rgba(124, 37, 41, 0.75) !important;
-}
-
-.fill--50 {
-    fill: rgba(124, 37, 41, 0.5) !important;
-}
-
-.fill--25 {
-    fill: rgba(124, 37, 41, 0.25) !important;
 }
 
 .border- {
     border-color: #7c2529 !important;
 }
 
-.border--75 {
-    border-color: rgba(124, 37, 41, 0.75) !important;
-}
-
-.border--50 {
-    border-color: rgba(124, 37, 41, 0.5) !important;
-}
-
-.border--25 {
-    border-color: rgba(124, 37, 41, 0.25) !important;
-}
-
 .stroke- {
     stroke: #7c2529 !important;
-}
-
-.stroke--75 {
-    stroke: rgba(124, 37, 41, 0.75) !important;
-}
-
-.stroke--50 {
-    stroke: rgba(124, 37, 41, 0.5) !important;
-}
-
-.stroke--25 {
-    stroke: rgba(124, 37, 41, 0.25) !important;
 }
 
 .shadow- {
@@ -138,32 +90,8 @@
     background-color: #000000 !important;
 }
 
-.bg-black-75 {
-    background-color: rgba(0, 0, 0, 0.75) !important;
-}
-
-.bg-black-50 {
-    background-color: rgba(0, 0, 0, 0.5) !important;
-}
-
-.bg-black-25 {
-    background-color: rgba(0, 0, 0, 0.25) !important;
-}
-
 .border-black {
     border-color: #000000 !important;
-}
-
-.border-black-75 {
-    border-color: rgba(0, 0, 0, 0.75) !important;
-}
-
-.border-black-50 {
-    border-color: rgba(0, 0, 0, 0.5) !important;
-}
-
-.border-black-25 {
-    border-color: rgba(0, 0, 0, 0.25) !important;
 }
 
 .white, .color-white, .color-white :is(h1, h2, h3, h4, h5, h6), .text-white, .text-white :is(h1, h2, h3, h4, h5, h6), .link-white a, .link-hover-white a:focus, .link-hover-white a:hover, a.link-white, a.link-hover-white:focus, a.link-hover-white:hover {
@@ -174,32 +102,8 @@
     background-color: #ffffff !important;
 }
 
-.bg-white-75 {
-    background-color: rgba(255, 255, 255, 0.75) !important;
-}
-
-.bg-white-50 {
-    background-color: rgba(255, 255, 255, 0.5) !important;
-}
-
-.bg-white-25 {
-    background-color: rgba(255, 255, 255, 0.25) !important;
-}
-
 .border-white {
     border-color: #ffffff !important;
-}
-
-.border-white-75 {
-    border-color: rgba(255, 255, 255, 0.75) !important;
-}
-
-.border-white-50 {
-    border-color: rgba(255, 255, 255, 0.5) !important;
-}
-
-.border-white-25 {
-    border-color: rgba(255, 255, 255, 0.25) !important;
 }
 
 .transparent, .text-transparent {
@@ -210,20 +114,8 @@
     background-color: rgba(0, 0, 0, 0) !important;
 }
 
-.trans, .text-trans {
-    color: rgba(0, 0, 0, 0) !important;
-}
-
-.bg-trans {
-    background-color: rgba(0, 0, 0, 0) !important;
-}
-
 .red, .color-red, .color-red :is(h1, h2, h3, h4, h5, h6), .text-red {
     color: #c8102e !important;
-}
-
-.gold, .color-gold, .color-gold :is(h1, h2, h3, h4, h5, h6), .text-gold {
-    color: #f1be48 !important;
 }
 
 .green, .color-green, .color-green :is(h1, h2, h3, h4, h5, h6), .text-green {
@@ -236,90 +128,4 @@
 
 .orange, .color-orange, .color-orange :is(h1, h2, h3, h4, h5, h6), .text-orange {
     color: #be531c !important;
-}
-
-.tan, .color-tan, .color-tan :is(h1, h2, h3, h4, h5, h6), .text-tan {
-    color: #b9975b !important;
-}
-
-.home.toolbar-vertical main, .home.toolbar-horizontal main, .admission-and-aid.toolbar-vertical main, .admission-and-aid.toolbar-horizontal main, .college.toolbar-vertical main, .college.toolbar-horizontal main {
-    padding-top: 54px !important;
-}
-
-.max-bound .outer-pad .itswd-section.itswd-section-full-width .itswd-section-content.itswd-section-content-constrained {
-    padding-left: 2.25rem;
-    padding-right: 2.25rem;
-}
-
-.max-bound .outer-pad .itswd-section.itswd-section-full-width .itswd-section-content.itswd-section-content-full-width {
-    padding-left: 2.25rem;
-    padding-right: 2.25rem;
-}
-
-@media (min-width:768px) {
-    .max-bound .outer-pad .itswd-section.itswd-section-full-width {
-        margin-left: -4.375rem;
-        margin-right: -4.375rem;
-    }
-
-    .max-bound .outer-pad .itswd-section.itswd-section-full-width .itswd-section-content.itswd-section-content-constrained {
-        padding-left: 4.375rem;
-        padding-right: 4.375rem;
-    }
-}
-
-@media (min-width:1200px) {
-    .max-bound .outer-pad .itswd-section.itswd-section-full-width {
-        margin-left: -11.875rem;
-        margin-right: -18.625rem;
-    }
-
-    .max-bound .outer-pad .itswd-section.itswd-section-full-width .itswd-section-content.itswd-section-content-constrained {
-        padding-left: 11.875rem;
-        padding-right: 18.625rem;
-    }
-}
-
-@media (min-width:100rem) {
-    .max-bound .outer-pad .itswd-section.itswd-section-full-width {
-        margin-left: calc(-11.875rem - ((100vw - 100rem) / 2));
-        margin-right: calc(-18.625rem - ((100vw - 100rem) / 2));
-    }
-
-    .max-bound .outer-pad .itswd-section.itswd-section-full-width .itswd-section-content.itswd-section-content-constrained {
-        padding-left: calc(11.875rem + ((100vw - 100rem) / 2));
-        padding-right: calc(18.625rem + ((100vw - 100rem) / 2));
-    }
-}
-
-.toolbar .toolbar-bar {
-    color: #fff;
-    background-color: #003555;
-}
-
-.toolbar .toolbar-menu, .toolbar .toolbar-tray, .toolbar .toolbar-tray a, .toolbar button.toolbar-icon, .toolbar .toolbar-toggle-orientation {
-    color: #fff;
-    background-color: #00598e;
-}
-
-.toolbar .toolbar-icon:before {
-    filter: brightness(0) invert(1);
-    -webkit-filter: brightness(0) invert(1);
-}
-
-.toolbar-tray a, .toolbar .toolbar-menu .toolbar-menu a, .toolbar-tray a:hover, .toolbar-tray a:active, .toolbar-tray a:focus, .toolbar-tray a.is-active, .toolbar .toolbar-tray a.is-active, .toolbar .toolbar-tray .menu-item--active-trail>.toolbar-box a {
-    color: #fff;
-}
-
-.toolbar-horizontal .toolbar-tray .menu-item:last-child {
-    border-right: 1px solid #004772;
-}
-
-.toolbar-horizontal .toolbar-tray .menu-item+.menu-item {
-    border-left: 1px solid #004772;
-}
-
-.toolbar-horizontal .toolbar-tray .toolbar-toggle-orientation {
-    background-color: #00598E;
-    border-left: 1px solid #004772;
 }
