@@ -246,31 +246,6 @@
     padding-top: 54px !important;
 }
 
-@media (min-width:1200px) {
-    .home.toolbar-vertical main, .home.toolbar-horizontal main, .admission-and-aid.toolbar-vertical main, .admission-and-aid.toolbar-horizontal main, .college.toolbar-vertical main, .college.toolbar-horizontal main {
-        padding-top: 117px !important;
-    }
-}
-
-.itswd-layout-builder-override-view main {
-    padding-top: 1.5rem;
-}
-
-.itswd-layout-builder-override-view header.site-header, .itswd-layout-builder-override-view .site-footer {
-    display: none;
-}
-
-@media (min-width:1200px) {
-    .itswd-layout-builder-override-view main {
-        padding-top: 1.5rem;
-    }
-}
-
-.max-bound .outer-pad .itswd-section.itswd-section-full-width {
-    margin-left: -2.25rem;
-    margin-right: -2.25rem;
-}
-
 .max-bound .outer-pad .itswd-section.itswd-section-full-width .itswd-section-content.itswd-section-content-constrained {
     padding-left: 2.25rem;
     padding-right: 2.25rem;
