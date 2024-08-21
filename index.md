@@ -1,6 +1,6 @@
 ---
 title: Digital Scholarship and Initiatives
-layout: page
+layout: default
 ---
 
 - one
