@@ -2,7 +2,7 @@
 title: About Us
 nav: About Us
 layout: people
-nav_order: 2
+nav_order: 1
 ---
 
 {% assign people = site.data.dsi-people %}
