@@ -6,8 +6,11 @@ nav_order: 1
 ---
 We work with the campus to develop digital projects, curate digital collections, and manage Iowa State University’s open access digital repository.
 
-## People
+## Staff
 {% include people.html %}
+
+## Students
+{% include students.html %}
 
 ## Location
 

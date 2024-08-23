@@ -3,7 +3,7 @@
 <div class="container">
     <div class="row">
         {% for p in people %}
-         {% if p.title != 'Student' %}   
+        {% if p.title == 'Student'%}
             <div class="col-md-6">
                 <div class="row pt-4 pb-5 align-items-center">
                     <div class="col-md-4 text-center">
@@ -24,7 +24,7 @@
                     </div>
                 </div>
             </div>
-         {% endif %}   
+        {% endif %}    
         {% endfor %}
     </div>
 </div>
