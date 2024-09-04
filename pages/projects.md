@@ -1,6 +1,6 @@
 ---
-title: Research Projects
-nav: Research Projects
+title: Projects
+nav: Projects
 layout: projects
-nav_order: 1
+nav_order: 2
 ---
