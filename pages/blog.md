@@ -27,6 +27,14 @@ nav_order: 4
       {%- if site.show_excerpts -%}
         <p>{{ post.excerpt }}</p>
       {%- endif -%}
+      {%- if post.tags -%}
+        <p class="post-tags">
+          Tags: 
+          {%- for tag in post.tags -%}
+            <a href="{{ '/tags/' | append: tag | relative_url }}" class="post-tag">{{ tag }}</a>{% if forloop.last == false %}, {% endif %}
+          {%- endfor -%}
+        </p>
+      {%- endif -%}
     </li>
     {%- endfor -%}
   </ul>
