@@ -18,7 +18,11 @@ Digital Scholarship and Initiatives conducts research and provides project suppo
             <img src="{{ p.image }}" class="card-img-top" alt="{{ p.image_alt }}">
             <div class="card-body">
                 <p class="card-title">{{ p.title }}</p>
-                <a href="{{ p.link }}" class="btn btn-outline-primary" target="_blank" rel="noopener">View Project</a>
+                {% if p.link contains "http" %}
+                <a href="{{ p.link }}" class="btn btn-outline-primary" target="_blank">View Project</a>
+                {% else %}
+                <a href="{{ p.link }}" class="btn btn-outline-primary">View Project</a>
+                {% endif %}
             </div>
         </div>
     </div>
