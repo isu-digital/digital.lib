@@ -8,7 +8,7 @@ nav_order: 2
 
 Digital Scholarship and Initiatives conducts research and provides project support and collaboration with students, faculty, and staff from across campus. Check out some of our work.
 
-## Current and Ongoing Projects
+## In-Progress and Ongoing Projects
 {% assign projects = site.data.dsi-research-projects %}
 <div class="row">
     {% for p in projects %}
@@ -35,18 +35,21 @@ Digital Scholarship and Initiatives conducts research and provides project suppo
 {% assign statuses = site.data.dsi-research-projects | map: 'status' | uniq %}
 {% assign types = site.data.dsi-research-projects | map: 'type' | uniq %}
 
-<div class="btn-group mb-4" role="group" aria-label="Filter by Status">
-    <button type="button" class="btn btn-outline-primary" onclick="filterProjects('all', 'status', this)">All</button>
-    {% for status in statuses %}
-    <button type="button" class="btn btn-outline-primary" onclick="filterProjects('{{ status }}', 'status', this)">{{ status | capitalize }}</button>
-    {% endfor %}
-</div>
+#### Filter by Status and Type
+<div class="filter-container">
+    <div class="btn-group mb-4" role="group" aria-label="Filter by Status">
+        <button type="button" class="btn btn-outline-primary" onclick="filterProjects('all', 'status', this)">All</button>
+        {% for status in statuses %}
+        <button type="button" class="btn btn-outline-primary" onclick="filterProjects('{{ status }}', 'status', this)">{{ status | capitalize }}</button>
+        {% endfor %}
+    </div>
 
-<div class="btn-group mb-4" role="group" aria-label="Filter by Type">
-    <button type="button" class="btn btn-outline-primary" onclick="filterProjects('all', 'type', this)">All</button>
-    {% for type in types %}
-    <button type="button" class="btn btn-outline-primary" onclick="filterProjects('{{ type }}', 'type', this)">{{ type | capitalize }}</button>
-    {% endfor %}
+    <div class="btn-group mb-4" role="group" aria-label="Filter by Type">
+        <button type="button" class="btn btn-outline-primary" onclick="filterProjects('all', 'type', this)">All</button>
+        {% for type in types %}
+        <button type="button" class="btn btn-outline-primary" onclick="filterProjects('{{ type }}', 'type', this)">{{ type | capitalize }}</button>
+        {% endfor %}
+    </div>
 </div>
 
 <div class="row" id="projects-container">
