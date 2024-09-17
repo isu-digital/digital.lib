@@ -11,12 +11,12 @@ layout: page
         <img class="img-fluid rounded-circle lazyload w-50" alt="image of {{ p.name }}" src="{{ p.image }}">
     </div>
     <div class="col-md-8">
-        <p><strong>{{ p.name }}</strong> is [bio/expertise, etc.].
+        <p><strong>{{ p.name }}</strong>, {{ p.title }}<br>    
         <br>
         <a href="mailto:{{ p.email }}">{{ p.email }}</a>
         {% if p.phone %}{{ p.phone }}{% endif %}
         <br>
-        {% if p.blog-page %}<a href="{{ p.name | slugify | append: '.html' | prepend: 'blog/' | relative_url }}">Blog</a>{% endif %}
+        {% if p.blog-page %}<a href="{{ p.name | slugify | append: '.html' | prepend: 'pages/' | relative_url }}">Blog</a>{% endif %}
         </p>
     </div>
 </div>

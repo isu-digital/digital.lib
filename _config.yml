@@ -31,17 +31,17 @@ baseurl:
 source-code: https://github.com/isu-digital/digital.lib
 
 # Collections
-collections:
-  blog:
-    output: true
+#collections:
+  #blog:
+    #output: true
 
 # Set Defaults
-defaults:
-  - scope:
-      path: ""
-      type: "blog"
-    values:
-      layout: "blog"
+#defaults:
+ # - scope:
+ #     path: ""
+ #     type: "blog"
+#    values:
+ #     layout: "blog"
 
 ##########
 # GOOGLE ANALYTICS [optional!]
@@ -62,12 +62,12 @@ noindex: true
 #
 # Defaults to simplify front matter,
 # all files in the "pages" folder will be output at root of site
-defaults:
-  - scope:
-      path: "pages"
-    values:
-      layout: page
-      permalink: /:basename:output_ext
-
+#defaults:
+  #- scope:
+  #    path: "pages"
+  #  values:
+  #    layout: page
+  #    permalink: /:basename:output_ext
+show_excerpts: true
 # ignore stuff
 exclude: [docs/, Rakefile, README.md, LICENSE]
