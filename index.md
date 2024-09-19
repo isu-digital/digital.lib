@@ -8,7 +8,7 @@ layout: default
     <h2>About us</h2>
     <hr style="border: none; height: 4px; background-color: #f1be48; width: 100px; margin: 7px 0;">
     <p>Digital Scholarship and Initiatives (DSI) is comprised of three units: digital scholarship, the digital repository, and digital collections. Our department supports the development of digital research projects; assists students, faculty, and staff in learning to use digital tools; and provides online access to ISU scholarship and historic materials.</p>
-    <p> We can be found in The Catalyst, an events and collaboration space managed by DSI along with our partners in the Library's <a href="https://www.lib.iastate.edu/research-and-teach/data-services">Research Data Services</a> and <a href="https://www.lib.iastate.edu/collections/digital-press">ISU Digital Press</a> Units. Learn more <a href="http://127.0.0.1:4000/about.html">about DSI</a>.</p>
+    <p> We can be found in The Catalyst, an events and collaboration space managed by DSI along with our partners in the Library's <a href="https://www.lib.iastate.edu/research-and-teach/data-services">Research Data Services</a> and <a href="https://www.lib.iastate.edu/collections/digital-press">ISU Digital Press</a> units. Learn more <a href="http://127.0.0.1:4000/pages/about.html">about DSI</a>.</p>
   </div>
   <br>
     <div class="card-container" style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
@@ -21,7 +21,7 @@ layout: default
             </div>
         </div>
         <div class="card" style="width: 18rem; background-color: #CAC7A7">
-            <img src="assets\img\DR_Student-Research.svg" class="card-img-top" alt="...">
+            <img src="assets\img\dr_dissertation.jpg" class="card-img-top" alt="...">
             <div class="card-body">
             <h5 class="card-title">Digital Repository</h5>
             <p class="card-text">Scholarly work, both unpublished and published, by current or emeritus ISU faculty, staff, and students. Includes theses and dissertations.</p>
@@ -30,7 +30,7 @@ layout: default
             </div>
         </div>
         <div class="card" style="width: 18rem; background-color: #CAC7A7">
-            <img src="https://digitalcollections.lib.iastate.edu/iiif/2/isu:WPA_b6f10i5~JP2~~isu_public/full/500,/0/default.jpg" class="card-img-top" alt="...">
+            <img src="https://digitalcollections.lib.iastate.edu/iiif/2/isu:WPA_b6f10i5~JP2~~isu_public/1200,900,3000,2250/500,/0/default.jpg" class="card-img-top" alt="...">
             <div class="card-body">
             <h5 class="card-title">Digital Collections</h5>
             <p class="card-text">Digital materials representing many of the library’s rare and unique resources, which document Iowa State University, Iowa, and beyond.</p>
