@@ -27,6 +27,12 @@ layout: default
         }
       });
     });
+
+    document.querySelectorAll('.about-us-card .btn').forEach(function(button) {
+      button.addEventListener('click', function(event) {
+        event.stopPropagation(); // Prevent the card click event from firing
+      });
+    });
   });
 </script>
 
