@@ -2,42 +2,10 @@
 title: Digital Scholarship and Initiatives
 layout: default
 ---
-<style>
-  .about-us-card {
-    width: 18rem;
-    background-color: #EED484;
-    transition: background-color 0.3s ease;
-    cursor: pointer; /* Change cursor to pointer to indicate it's clickable */
-  }
-  .about-us-card:hover {
-    background-color: #F1BE48; /* Replace with your desired highlight color */
-  }
-  .btn-spacing {
-    margin-bottom: 10px;
-  }
-  .btn-spacing:hover {
-    background-color: #7C2529; /* Replace with your desired button hover color */
-  }
-</style>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.about-us-card').forEach(function(card) {
-      card.addEventListener('click', function() {
-        const link = card.getAttribute('data-link');
-        if (link) {
-          window.open(link, '_blank');
-        }
-      });
-    });
+<link rel="stylesheet" href="assets/css/styles.css">
+<script src="assets\js\indexcards.js"></script>
 
-    document.querySelectorAll('.about-us-card .btn').forEach(function(button) {
-      button.addEventListener('click', function(event) {
-        event.stopPropagation(); // Prevent the card click event from firing
-      });
-    });
-  });
-</script>
 
 <div style="width: 100%; max-width: 60rem; margin: 0 auto;">
   <h1>About us</h1>
@@ -50,18 +18,18 @@ layout: default
 
 <div class="card-container" style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
   <div class="card about-us-card" data-link="https://www.lib.iastate.edu/research-and-teach/digital-scholarship">
-    <img src="assets\img\blackisc_map.jpg" class="card-img-top" alt="...">
+    <img src="assets/img/blackisc_map.jpg" class="card-img-top" alt="...">
     <div class="card-body">
       <h4 class="card-title">Digital Scholarship</h4>
       <p class="card-text">Integrate digital tools and methods into research, instruction, and publication to gain new insights and teach new skills.</p>
     </div>
   </div>
   <div class="card about-us-card" data-link="https://www.lib.iastate.edu/collections/digital-repository-iowa-state-university">
-    <img src="assets\img\dr_dissertation.jpg" class="card-img-top" alt="...">
+    <img src="assets/img/dr_dissertation.jpg" class="card-img-top" alt="...">
     <div class="card-body">
       <h4 class="card-title">Digital Repository</h4>
       <p class="card-text">Scholarly work, both unpublished and published, by current or emeritus ISU faculty, staff, and students. Includes theses and dissertations.</p>
-      <a href="https://dr.lib.iastate.edu/" class="btn bg-iastate-red btn-spacing" target="_blank" rel="noopener noreferrer" style="color: white;">Explore the Digital Repository</a>
+      <a href="https://dr.lib.iastate.edu/" class="btn btn-cards" target="_blank" rel="noopener noreferrer">Explore the Digital Repository</a>
     </div>
   </div>
   <div class="card about-us-card" data-link="https://www.lib.iastate.edu/collections/digital-collections">
@@ -69,11 +37,11 @@ layout: default
     <div class="card-body">
       <h4 class="card-title">Digital Collections</h4>
       <p class="card-text">Digital materials representing many of the library’s rare and unique resources, which document Iowa State University, Iowa, and beyond.</p>
-      <a href="https://digitalcollections.lib.iastate.edu/" class="btn bg-iastate-red btn-spacing" target="_blank" rel="noopener noreferrer" style="color: white;">Explore our Digital Collections</a>
+      <a href="https://digitalcollections.lib.iastate.edu/" class="btn btn-cards" target="_blank" rel="noopener noreferrer">Explore our Digital Collections</a>
     </div>
   </div>
   <div class="card about-us-card" data-link="https://www.lib.iastate.edu/visit-and-study/creation-and-learning-spaces/catalyst">
-    <img src="assets\img\catalyst4.jpg" class="card-img-top" alt="...">
+    <img src="assets/img/catalyst4.jpg" class="card-img-top" alt="...">
     <div class="card-body">
       <h4 class="card-title">The Catalyst</h4>
       <p class="card-text">Our space for consultations, workshops, and events. Shared with our partners in Research Data Services and the ISU Digital Press.</p>
