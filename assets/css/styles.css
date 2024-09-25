@@ -5,11 +5,6 @@
     width: 18rem;
     background-color: #EED484;
     transition: background-color 0.3s ease;
-    cursor: pointer; /* Change cursor to pointer to indicate it's clickable */
-  }
-  
-  .about-us-card:hover {
-    background-color: #F1BE48; /* Replace with your desired highlight color */
   }
   
   /* Button spacing */
