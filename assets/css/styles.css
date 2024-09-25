@@ -1,0 +1,55 @@
+/* styles.css */
+
+/* Card styles */
+.about-us-card {
+    width: 18rem;
+    background-color: #EED484;
+    transition: background-color 0.3s ease;
+    cursor: pointer; /* Change cursor to pointer to indicate it's clickable */
+  }
+  
+  .about-us-card:hover {
+    background-color: #F1BE48; /* Replace with your desired highlight color */
+  }
+  
+  /* Button spacing */
+  .btn-spacing {
+    margin-bottom: 10px;
+  }
+  
+  /* Highlight bar for the "About us" section */
+  .highlight-bar {
+    border: none;
+    height: 4px;
+    background-color: #f1be48;
+    width: 100px;
+    margin: 7px 0;
+  }
+  
+  /* Container for the content */
+  .content-container {
+    width: 100%;
+    max-width: 60rem;
+    margin: 0 auto;
+  }
+  
+  /* Card container styles */
+  .card-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  /* Centering the featured projects */
+  .featured-projects-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .featured-projects-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
