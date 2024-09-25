@@ -45,4 +45,19 @@
     --bs-btn-disabled-color:#fff;
     --bs-btn-disabled-bg:#7c2529;
     --bs-btn-disabled-border-color:#7c2529
+=======
+
+.filter-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.filter-container .btn-group {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.filter-container .btn-group:last-child {
+    margin-right: 0;
 }

@@ -1,0 +1,28 @@
+---
+layout: page
+---
+{% assign author_name = page.author_name %}
+{% assign image = page.image %}
+{% assign alt = page.alt %}
+<div style="display: flex; justify-content: flex-end;">
+    <div style="flex: 1;">
+      <p>{{page.job_title}}</p>
+        <h3>Bio: </h3><p>{{page.bio}}</p>
+        <h3>Current Projects: </h3><p>{{page.projects}}</p>
+    </div>
+    <div>
+        {% include figure.html img=page.image alt=page.alt width="50%" %}
+    </div>
+</div>
+<h2>Posts by {{ author_name }}</h2>
+
+<ul>
+  {% for post in site.posts %}
+    {% if post.author == author_name %}
+      <li>
+        <a href="{{ post.url }}">{{ post.title }}</a>
+        <p>{{ post.date | date: "%B %d, %Y" }}</p>
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>

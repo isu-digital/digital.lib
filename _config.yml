@@ -71,3 +71,6 @@ noindex: true
 show_excerpts: true
 # ignore stuff
 exclude: [docs/, Rakefile, README.md, LICENSE]
+
+# Plugins
+plugins_dir: _plugins
