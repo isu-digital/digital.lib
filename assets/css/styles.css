@@ -2,7 +2,7 @@
 
 /* Card styles */
 .about-us-card {
-    width: 18rem;
+    width: 30rem;
     background-color: #EED484;
     transition: background-color 0.3s ease;
   }
@@ -30,11 +30,13 @@
   
   /* Card container styles */
   .card-container {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-  }
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Creates two equal-width columns */
+    gap: 2rem; /* Space between grid items */
+    justify-content: center; /* Centers the grid container */
+    max-width: 800px; /* Set a max-width to control the container width */
+    margin: 0 auto; /* Center the container horizontally */
+}
   
   /* Centering the featured projects */
   .featured-projects-container {
