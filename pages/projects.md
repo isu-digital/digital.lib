@@ -8,7 +8,7 @@ nav_order: 2
 
 Digital Scholarship and Initiatives conducts research and provides project support and collaboration with students, faculty, and staff from across campus. Check out some of our work.
 
-## In-Progress and Ongoing Projects
+## Current Projects
 {% assign projects = site.data.dsi-research-projects %}
 <div class="row">
     {% for p in projects %}
