@@ -1,0 +1,115 @@
+---
+title: Digital Scholarship and Initiatives
+layout: page
+---
+
+<h1 class="py-0">Innovate Together</h1>
+
+<hr style="border: none; height: 4px; background-color: #f1be48; width: 100px; margin: 7px 0;">
+
+<div class="col-md-8">
+  <p style="font-size: 1.5rem;">Digital Scholarship & Initiatives (DSI) partners on digital research, empowers users to learn experimental technologies, and shares Iowa State University scholarship and history online.</p>
+
+  <a class="btn btn-outline-primary" href="{{ '/pages/collaborate.html' | relative_url }}">Work with us</a>
+
+</div>
+
+
+
+{% assign projects = site.data.dsi-research-projects %}
+<div class="row py-5 gx-5">
+    <div class="col-md-4">
+        <h2>Featured Projects</h2>
+        {% for p in projects %}
+        {% if p.featured == "true" %}
+        <div class="card my-4" style="border: none;">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="{{ p.image }}" class="img-fluid rounded" alt="{{ p.image_alt }}">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <p class="card-title">{{ p.title }}</p>
+                        <p class="card-text"><a href="{{ p.link }}" class="btn btn-sm btn-outline-primary" target="_blank" rel="noopener">View Project</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+        <div class="text-center">
+            <a href="#" class="btn btn-primary m-2"><span class="fas fa-gears"></span> See All Projects</a>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <h2>Explore</h2>
+        <div class="card mb-2 mx-3 text-center">
+          <div class="card-header fw-bold">
+            Iowa State University Scholarship
+          </div>
+          <div class="card-body">
+            <div id="dr-th" class="mx-auto">
+              <a href="#">
+                <img class="img-fluid rounded" src="/assets/img/dr_th.jpg" alt="">
+              </a>
+            </div>
+            <div class="card-text">
+              <p>Explore free access to the research and scholarship of Iowa State University's faculty, students and staff through the library's <a href="https://dr.lib.iastate.edu/" class="fw-bold">Digital Repository</a></p>
+              <a href="https://dr.lib.iastate.edu/" class="btn btn-primary m-1">View Scholarship</a>
+            </div>
+          </div>
+        </div>
+        <div class="card mt-2 mx-3 text-center">
+          <div class="card-header fw-bold">
+            Digitized Historical Material
+          </div>
+          <div class="card-body">
+            <div id="dr-th" class="mx-auto">
+              <a href="#">
+                <img class="img-fluid rounded w-50" src="/assets/img/dc_th.jpg" alt="">
+              </a>
+            </div>
+            <div class="card-text">
+              <p>Discover unique photographs, maps, letters, diaries, audiovisual material, and more from the Iowa State University Library's <a href="https://digitalcollections.lib.iastate.edu/" class="fw-bold">Digital Collections</a></p>
+              <a href="https://digitalcollections.lib.iastate.edu/" class="btn btn-primary m-1">View Collections</a>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <h2>Upcoming Events</h2>
+
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Event</th>
+                <th scope="col">Date</th>
+                <th scope="col">Time</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">GIS Workshop</th>
+                <td>November 7, 2024</td>
+                <td>2-3pm</td>
+              </tr>
+              <tr>
+                <th scope="row">Data Workshop</th>
+                <td>November 20, 2024</td>
+                <td>11am-12pm</td>
+              </tr>
+              <tr>
+                <th scope="row">Digital Scholarship Symposium</th>
+                <td>March 26, 2025</td>
+                <td>8am-3pm</td>
+              </tr>
+            </tbody>
+        </table>
+
+        <div class="text-center">
+            <a href="#" class="btn btn-primary m-2"><span class="fas fa-calendar-alt"></span> Calendar</a>
+            <a href="#" class="btn btn-primary m-2"><span class="fas fa-file"></span> Resources</a>
+        </div>
+
+    </div>
+</div>
