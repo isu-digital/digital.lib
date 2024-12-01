@@ -1,6 +1,7 @@
 ---
 title: Projects
 nav: Projects
+permalink: /projects.html
 layout: page
 nav_order: 2
 ---

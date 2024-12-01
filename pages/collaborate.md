@@ -2,6 +2,7 @@
 layout: page
 title: Collaborate With Us
 nav: Collaborate
+permalink: /collaborate.html
 nav_order: 3
 ---
 

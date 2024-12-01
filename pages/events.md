@@ -1,6 +1,7 @@
 ---
 title: Upcoming Events
 nav: Events
+permalink: /events.html
 layout: page
 nav_order: 5
 ---
