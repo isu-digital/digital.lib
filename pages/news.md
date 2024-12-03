@@ -2,6 +2,7 @@
 layout: page
 title: News and Updates
 nav: News
+permalink: /news.html
 nav_order: 4
 ---
 {% if site.paginate %}

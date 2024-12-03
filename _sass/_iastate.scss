@@ -1,0 +1,110 @@
+/* header */
+.dsi-site-title {
+    max-width: 15.625rem;
+    color: #7c2529;
+    font-family: Arial,Helvetica Neue,sans-serif;
+    font-weight: 700;
+    font-size: 1.125rem;
+    line-height: 1.27778;
+}
+
+.nav-item > a {
+    max-width: none;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    color: #c8102e;
+    font-size: 1rem;
+    line-height: 1.625;
+    margin: 0;
+    border-radius: 0;
+    font-family: Arial,Helvetica Neue,sans-serif;
+    font-weight: 700;   
+}
+
+.nav-item > a:hover {
+    color: #7c2529;
+}
+
+#search-icon path {
+    fill: #7c2529;
+}
+
+.nav-link.active {
+    color: #7c2529 !important;
+}
+
+.hidden {
+    display: none;
+}
+
+/* footer */
+.footer-section-label {
+    font-size: 1rem;
+    line-height: 1.25;
+    margin-top: 3.75rem !important;
+    padding: 0; 
+    color: #fff;
+    font-size: 1.125rem;
+    line-height: 1.44444;
+    font-family: Merriweather,serif;
+    font-weight: 700;
+}
+
+.footer-links > a:hover {
+    color: #f1be48;
+}
+
+.footer-list {
+    color: white;
+    text-decoration: underline;
+    text-decoration-thickness: auto;
+    font-family: Arial,Helvetica Neue,sans-serif;
+    font-weight: 700;
+    text-decoration-thickness: .0625rem;
+    text-underline-offset: .0625rem;
+    font-size: 1rem;
+    line-height: 1.75;
+}
+
+.footer-text {
+    color: white;
+    font-family: Arial,Helvetica Neue,sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.75;
+}
+
+.footer-list > a {
+    color: #fff;
+    font-family: Arial,Helvetica Neue,sans-serif;
+    font-weight: 700;
+    font-size: .9375rem;
+    text-decoration: underline;
+    line-height: 1.4;
+    padding: 0 .5rem;
+}
+
+.nav-item > a:hover {
+    color: #f1be48;
+}
+
+.social {
+    border: .125rem solid #f1be48;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.social svg {
+    width: 60%;
+    height: 60%;
+    color: #f1be48;
+}
+
+.social:hover {
+    background-color: #7c2529;
+}

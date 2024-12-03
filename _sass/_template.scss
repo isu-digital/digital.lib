@@ -111,3 +111,77 @@ a { text-decoration: none; }
     height: 1em;
     vertical-align: -0.1em;
 }
+
+/* iastate theme */
+h1 {
+    font-size: 3.5rem;
+    line-height: 1.125;
+}
+
+body {
+    font-family: Arial, Helvetica Neue, sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.77778;
+    color: #4a4a4a
+}
+
+#wrapper {
+    overflow-x: hidden;
+}
+
+p a:hover {
+    color: #c8102e
+}
+
+.h1, h1 {
+    color: #c8102e;
+    font-family: Merriweather, serif;
+    font-size: 3.125rem;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 1.2;
+    margin: 3rem 0 1rem
+}
+
+.h2, h2 {
+    color: #c8102e;
+    font-family: Merriweather, serif;
+    font-size: 1.875rem;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 1.4;
+    padding-bottom: 1.75rem;
+    margin: 3rem 0 1.375rem;
+    position: relative
+}
+
+.h3, h3 {
+    color: #c8102e;
+    font-family: Arial, Helvetica Neue, sans-serif;
+    font-size: 1.3125rem;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 1.42857;
+    margin: 2.375rem 0 .5625rem
+}
+
+.h4, .h5, h4, h5 {
+    color: #7c2529;
+    font-family: Arial, Helvetica Neue, sans-serif;
+    font-weight: 700;
+    letter-spacing: 0;
+    margin: 3rem 0 1rem
+}
+
+.h5, .h6, h5, h6 {
+    font-size: 1rem;
+    line-height: 1.5625
+}
+
+.h6, h6 {
+    color: #7c2529;
+    font-family: Arial, Helvetica Neue, sans-serif;
+    font-weight: 700;
+    letter-spacing: 0;
+    margin: 3rem 0 1rem
+}

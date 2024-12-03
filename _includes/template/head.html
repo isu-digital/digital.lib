@@ -11,9 +11,11 @@
 {% if page.head %}{% include {{ page.head }} %}{% endif %}
 {% if layout.head %}{% include {{ layout.head }} %}{% endif %}
 <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" type="text/css">
+<!--
 <link rel="stylesheet" href="{{ '/assets/css/iastatecolors.css' | relative_url }}" type="text/css">
 <link rel="stylesheet" href="{{ '/assets/css/iastatecustom3.css' | relative_url }}" type="text/css">
 <link rel="stylesheet" href="{{ '/assets/css/iastatecustom6.css' | relative_url }}" type="text/css">
+-->
 <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
 
 {% if site.noindex == true or page.noindex == true %}<meta name="robots" content="noindex">{% endif %}

@@ -2,6 +2,7 @@
 layout: page
 title: Collaborate With Us
 nav: Collaborate
+permalink: /collaborate.html
 nav_order: 3
 ---
 {% include jumbotron.html heading = "Our Expertise" text = "We specialize in a variety of digital methods and skills including GIS, text analysis, data visualization, digital storytelling, static web development, and digital pedagogy." %}
