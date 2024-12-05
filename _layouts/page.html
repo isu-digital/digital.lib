@@ -1,7 +1,14 @@
 ---
 layout: default 
 ---
+
+{% unless page.title == "Digital Scholarship and Initiatives" %}
 <div class="container my-3">
     {% if page.title %}<h1>{{ page.title }}</h1>{% endif %}
     {{ content }}
 </div>
+{% else %}
+<div class="container">
+    {{ content }}
+</div>
+{% endunless %}
