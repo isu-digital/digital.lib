@@ -3,42 +3,27 @@ title: Digital Scholarship and Initiatives
 layout: page
 ---
 
+<style>
+  #jumbotron-catalyst {
+    background: url('{{ "/assets/img/catalyst2.jpg" | relative_url }}') no-repeat center;
+    background-size: cover;
+    height: 75vh;
+  }
+</style>
+
 <h1 class="py-0">Innovate Together</h1>
 
 <hr style="border: none; height: 4px; background-color: #f1be48; width: 100px; margin: 7px 0;">
 
 <div class="col-md-8">
-  <p style="font-size: 1.5rem;">Digital Scholarship & Initiatives (DSI) partners on digital research, empowers users to learn experimental technologies, and shares Iowa State University scholarship and history online.</p>
+  <p style="font-size: 1.5rem;">Digital Scholarship & Initiatives (DSI) partners on digital research, empowers users to learn experimental technologies, and shares Iowa State University scholarship and history online</p>
 
-  <a class="btn btn-outline-primary" href="{{ '/pages/collaborate.html' | relative_url }}">Work with us</a>
+  <a class="btn btn-outline-primary" href="{{ '/collaborate.html' | relative_url }}">Work with us</a>
 
 </div>
 
 {% assign projects = site.data.dsi-research-projects %}
 <div class="row py-5 gx-5">
-    <!--<div class="col-md-4">
-        <h2>Featured Projects</h2>
-        {% for p in projects %}
-        {% if p.featured == "true" %}
-        <div class="card my-4" style="border: none;">
-            <div class="row">
-                <div class="col-md-4">
-                    <img src="{{ p.image }}" class="img-fluid rounded" alt="{{ p.image_alt }}">
-                </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <p class="card-title">{{ p.title }}</p>
-                        <p class="card-text"><a href="{{ p.link }}" class="btn btn-sm btn-outline-primary" target="_blank" rel="noopener">View Project</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        {% endif %}
-        {% endfor %}
-        <div class="text-center">
-            <a href="#" class="btn btn-primary m-2"><span class="fas fa-gears"></span> See All Projects</a>
-        </div>
-    </div>-->
     <div class="col-md-8">
       <h2 class="pb-0">Explore</h2>
       <div class="card my-4" style="border: none;">
@@ -84,43 +69,6 @@ layout: page
         </div>
       </div>
     </div>
-    <!--<div class="col-md-4">
-        <h2>Explore</h2>
-        <div class="card mb-2 mx-3 text-center">
-          <div class="card-header fw-bold">
-            Iowa State University Scholarship
-          </div>
-          <div class="card-body">
-            <div id="dr-th" class="mx-auto">
-              <a href="#">
-                <img class="img-fluid rounded" src="{{ '/assets/img/dr_th.jpg' | relative_url }}" alt="">
-              </a>
-            </div>
-            <div class="card-text">
-              <p>Explore free access to the research and scholarship of Iowa State University's faculty, students and staff through the library's <a href="https://dr.lib.iastate.edu/" class="fw-bold">Digital Repository</a></p>
-              <hr>
-              <a href="https://dr.lib.iastate.edu/" class="btn btn-primary m-1">View Scholarship</a>
-            </div>
-          </div>
-        </div>
-        <div class="card mt-2 mx-3 text-center">
-          <div class="card-header fw-bold">
-            Digitized Historical Material
-          </div>
-          <div class="card-body">
-            <div id="dr-th" class="mx-auto">
-              <a href="#">
-                <img class="img-fluid rounded w-50" src="{{ '/assets/img/dc_th.jpg' | relative_url }}" alt="">
-              </a>
-            </div>
-            <div class="card-text">
-              <p>Discover unique photographs, maps, letters, diaries, audiovisual material, and more from the Iowa State University Library's <a href="https://digitalcollections.lib.iastate.edu/" class="fw-bold">Digital Collections</a></p>
-              <hr>
-              <a href="https://digitalcollections.lib.iastate.edu/" class="btn btn-primary m-1">View Collections</a>
-            </div>
-          </div>
-        </div>
-    </div>-->
     <div class="col-md-4">
         <h2 class="pb-0">Upcoming Events</h2>
 
@@ -161,13 +109,28 @@ layout: page
 
 <div class="row">
   <h2 class="pb-0">Our Space</h2>
-  <div class="full-screen-image pb-3">
-    <img src="{{ '/assets/img/catalyst2.jpg' | relative_url }}" class="img-fluid w-100 h-100" alt="">
-  </div>
-  <div class="col-md-8">
-    <p>The Catalyst is a modern collaborative incubator for specialized research and instruction services and trainings related to digital scholarship, digital publishing, good data management and sharing of research data.
-      <br>
-    <a href="https://www.lib.iastate.edu/visit-and-study/creation-and-learning-spaces/catalyst" class="btn btn-outline-primary" target="_blank" rel="noopener">Learn More</a>
-    </p>
+</div>
+
+<div class="pb-5">
+  <div id="jumbotron-catalyst" class="d-flex align-items-end mb-0">
+    <div class="container-fluid">
+      <div class="row py-4">
+        <div class="col-md-6">
+
+        </div>
+        <div class="col-md-6 pe-5">
+          <div class="card bg-dark" style="opacity: .95">
+            <div class="card-text p-3">
+              <h3 class="display-3 text-end text-white" style="font-family: Merriweather,serif;">The Catalyst</h3>
+              <p class="text-end text-white">Join us for consultations, teaching, and research in <a href="https://www.lib.iastate.edu/visit-and-study/creation-and-learning-spaces/catalyst" target="_blank" rel="noopener" class="text-white text-decoration-underline">the Catalyst</a> — ISU Library's collaobrative incubator for digital scholarship, digital publishing, good data management and sharing of research data.
+              </p>
+              <p class="text-end text-white">
+                <a href="https://www.lib.iastate.edu/visit-and-study/creation-and-learning-spaces/catalyst" class="btn btn-outline-light" target="_blank" rel="noopener">Space Details</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
