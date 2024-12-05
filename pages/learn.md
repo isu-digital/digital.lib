@@ -1,11 +1,14 @@
 ---
-title: Upcoming Events
-nav: Events
-permalink: /events.html
+title: Learn With Us
+nav: Learn
+permalink: /learn.html
 layout: page
 nav_order: 5
 ---
+## Workshops
 
+
+## Upcoming Events
 {% assign events = site.data.dsi-events %}
 <div class="row">
     {% for e in events %}
@@ -25,7 +28,7 @@ nav_order: 5
     {% endfor %}
 </div>
 
-# Past Events
+## Past Events
 
 <div class="row">
     {% for e in events %}
