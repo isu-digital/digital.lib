@@ -1,6 +1,11 @@
 ---
 layout: page
 ---
+<header class="post-header">
+{% if page.image %}
+    <img src="{{ page.image | relative_url }}" class="featured-image-post">
+{% endif %}
+</header>
 <div class="container my-3">
     {% if post.title %}<h1>{{ post.title }}</h1>{% endif %}
     {{ content }}

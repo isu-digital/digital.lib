@@ -19,6 +19,9 @@ nav_order: 4
     {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
     {%- for post in posts -%}
     <li>
+      {% if post.image %}
+      <img src="{{ post.image | relative_url }}" class="blog-roll-image"> 
+      {% endif %}
       <h3>
         <a class="post-link" href="{{ post.url | relative_url }}">
           {{ post.title | escape }}
