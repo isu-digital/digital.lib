@@ -13,12 +13,14 @@
     }
     // add items
     var listDocs = [
-        {% assign listDocs = site.documents | where_exp: 'i','i.ignore != true' %}
+        {% assign listDocs = site.data.dsi-research-projects | where_exp: 'i','i.ignore != true' %}
         {% for i in listDocs %}
         { 
             {% if i.image %}listImg: "{{ i.image | relative_url }}", listImgAlt: "{{ i.image_alt }}",{% endif %}
-            listLink: "{{ i.url | relative_url }}", 
+            listLink: "{{ i.link | relative_url }}", 
             listTitle: {{ i.title | jsonify }}, 
+            listAlt: {{ i.image_alt | jsonify }},
+            listStatus: {{ i.status | jsonify }},
             listType: "{{ i.type }}", 
             {% if i.project_genre %}listGenre: "{{ i.project_genre }}",{% endif %}
             listText: {{ i.description | default: i.content | strip_html | truncatewords: 25 | jsonify }} 
@@ -34,6 +36,7 @@
             'listTitle',
             'listType',
             'listGenre',
+            'listStatus',
             'listText'
         ],
         item: function(values) {
@@ -42,20 +45,23 @@
             var cardImg = "";
             var cardGenre = "";
             switch (values.listType) {
-                case "contribute":
+                case "exhibit":
                     borderColor = "border-success";
                     break;
-                case "concept":
+                case "workshop":
                     borderColor = "border-primary";
                     break;
-                case "Models Of":
+                case "collections as data":
                     borderColor = "border-danger";
                     break;
-                case "Models For":
+                case "digital collection":
                     borderColor = "border-warning";
                     break;
-                case "Tool":
+                case "student project":
                     borderColor = "border-info";
+                    break;
+                case "digital scholarship":
+                    borderColor = "border-secondary";
                     break;
                 default:
                     borderColor = "";
@@ -66,10 +72,10 @@
             if(values.listGenre) { 
                 cardGenre = ` : ${values.listGenre.split(";").join(" ;")}`;
             } 
-            var card = `<div class="col">
+            var card = `<div class="col-md-3">
                 <div class="card mb-3 ${borderColor}">
                     <div class="card-body">
-                        <h3 class="card-title"><a class="listTitle" href="${values.listLink}">${values.listTitle}</a></h3>
+                        <h3 class="card-title mt-0"><a class="listTitle" href="${values.listLink}">${values.listTitle}</a></h3>
                         <p class="card-text"><strong class="listType">${values.listType}</strong> ${cardGenre}</p>${cardImg}
                         <p class="card-text"><span class="listText">${values.listText}</span></p>
                     </div>

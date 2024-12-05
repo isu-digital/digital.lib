@@ -4,8 +4,8 @@ nav: Projects
 permalink: /projects.html
 layout: page
 nav_order: 2
+foot: js/browse-all.html
 ---
-
 
 Digital Scholarship and Initiatives conducts research and provides project support and collaboration with students, faculty, and staff from across campus. Check out some of our work.
 
@@ -24,11 +24,11 @@ Digital Scholarship and Initiatives conducts research and provides project suppo
                     <input type="radio" class="btn-check sort" name="sort_list" id="list_type" autocomplete="off" data-sort="listType">
                     <label class="btn btn-outline-info m-1" for="list_type">Type</label>
                 </p>
-                <p>View item types:</p>
+                <p>View project types:</p>
                 <p>
                     <input type="radio" class="btn-check" name="filterRadio" id="filter-all" autocomplete="off" value="show-all" checked>
                     <label class="btn btn-outline-primary m-1" for="filter-all">All</label>
-                    {% assign types = site.dsi-research-projects | where_exp: 'i','i.ignore != true' | map: 'type' | compact | uniq %}
+                    {% assign types = site.data.dsi-research-projects | where_exp: 'i','i.ignore != true' | map: 'type' | compact | uniq %}
                     {% for t in types %}
                     <input type="radio" class="btn-check" name="filterRadio" id="filter-{{ t | slugify }}" autocomplete="off" value="{{ t }}">
                     <label class="btn btn-outline-primary m-1" for="filter-{{ t | slugify }}">{{ t }}</label>
