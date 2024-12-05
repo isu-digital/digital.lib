@@ -84,4 +84,19 @@
     object-fit: contain;
     float: left;
     margin-right: 10px;
+.square-img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    object-position: top;
+}
+
+.full-screen-image {
+    height: 75vh;
+    overflow: hidden;
+  }
+  
+  .full-screen-image img {
+    object-fit: cover;
+    object-position: center;
 }
