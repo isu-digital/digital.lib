@@ -18,11 +18,9 @@
         { 
             {% if i.image %}listImg: "{{ i.image | relative_url }}", listImgAlt: "{{ i.image_alt }}",{% endif %}
             listLink: "{{ i.link | relative_url }}", 
-            listTitle: {{ i.title | jsonify }}, 
-            listAlt: {{ i.image_alt | jsonify }},
-            listStatus: {{ i.status | jsonify }},
+            listTitle: {{ i.title | jsonify }},
             listType: "{{ i.type }}", 
-            {% if i.project_genre %}listGenre: "{{ i.project_genre }}",{% endif %}
+            {% if i.status %}listGenre: "{{ i.status }}",{% endif %}
             listText: {{ i.description | default: i.content | strip_html | truncatewords: 25 | jsonify }} 
         }{% unless forloop.last %},{% endunless %}
         {% endfor %}
@@ -36,7 +34,6 @@
             'listTitle',
             'listType',
             'listGenre',
-            'listStatus',
             'listText'
         ],
         item: function(values) {
@@ -76,7 +73,7 @@
                 <div class="card mb-3 ${borderColor}">
                     <div class="card-body">
                         <h3 class="card-title mt-0"><a class="listTitle" href="${values.listLink}">${values.listTitle}</a></h3>
-                        <p class="card-text"><strong class="listType">${values.listType}</strong> ${cardGenre}</p>${cardImg}
+                        <p class="card-text"><strong class="listType">${values.listType}</strong><span class="hidden">${cardGenre}</span></p>${cardImg}
                         <p class="card-text"><span class="listText">${values.listText}</span></p>
                     </div>
                 </div>
@@ -90,12 +87,16 @@
 
     // setup filter function
     function filterByType() {
-        var filterType = document.querySelector('input[name="filterRadio"]:checked').value;
-        if (filterType == "show-all") {
+        var filterBtn = document.querySelector('input[name="filterRadio"]:checked');
+        if (filterBtn.value == "show-all") {
             documentList.filter();
+        } else if (filterBtn.id.includes("filter-genre-")) {
+            documentList.filter(function(item) { 
+                if (item.values().listGenre && item.values().listGenre.includes(filterBtn.value)) { return true; } else { return false } 
+            });
         } else {
             documentList.filter(function(item) { 
-                if (item.values().listType == filterType) { return true; } else { return false } 
+                if (item.values().listType == filterBtn.value) { return true; } else { return false } 
             });
         }
     }

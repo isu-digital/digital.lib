@@ -30,22 +30,6 @@
     --bs-btn-disabled-bg:#7c2529;
     --bs-btn-disabled-border-color:#7c2529
 }
-.btn-cards{
-    --bs-btn-color:#FFFFFF;
-    --bs-btn-bg:#C8102E;
-    --bs-btn-border-color:#7c2529;
-    --bs-btn-hover-color:#FFFFFF;
-    --bs-btn-hover-bg:#7c2529;
-    --bs-btn-hover-border-color:#0a58ca;
-    --bs-btn-focus-shadow-rgb:49,132,253;
-    --bs-btn-active-color:#fff;
-    --bs-btn-active-bg:#0a58ca;
-    --bs-btn-active-border-color:#0a53be;
-    --bs-btn-active-shadow:inset 0 3px 5px rgba(0, 0, 0, 0.125);
-    --bs-btn-disabled-color:#fff;
-    --bs-btn-disabled-bg:#7c2529;
-    --bs-btn-disabled-border-color:#7c2529
-}
 
 .filter-container {
     display: flex;
@@ -66,12 +50,14 @@
     padding-top: 12rem !important;
 }
 
+/* projects page */
 .list-img {
     width: 100%;
     height: 175px;
     object-fit: cover;
 }
 
+/* home page */
 .square-img {
     width: 200px;
     height: 200px;
@@ -82,9 +68,41 @@
 .full-screen-image {
     height: 75vh;
     overflow: hidden;
-  }
+}
   
   .full-screen-image img {
     object-fit: cover;
     object-position: center;
+}
+
+:root {
+    --bs-blue: #0d6efd;
+    --bs-indigo: #6610f2;
+    --bs-purple: #6f42c1;
+    --bs-pink: #d63384;
+    --bs-red: #7C2529;
+    --bs-primary-rgb: 124, 37, 41;
+    --bs-cardinal-rgb: 200, 16, 46;
+    --bs-orange: #fd7e14;
+    --bs-yellow: #ffc107;
+    --bs-warning-rgb: 255, 193, 7;
+    --bs-green: #198754;
+    --bs-teal: #20c997;
+    --bs-cyan: #0dcaf0;
+    --bs-white: #fff;
+    --bs-gray: #6c757d;
+    --bs-gray-dark: #343a40;
+    --bs-secondary: #6c757d;
+    --bs-secondary-rgb: 202, 199, 167;
+    --bs-success: #524727;
+    --bs-success-rgb: 82, 71, 39;
+    --bs-info: #7A99AC;
+    --bs-info-rgb: 122, 153, 172;
+    --bs-warning: #ffc107;
+    --bs-danger: #dc3545;
+    --bs-light: #f8f9fa;
+    --bs-dark: #212529;
+    --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
 }

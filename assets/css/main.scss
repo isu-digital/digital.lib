@@ -16,6 +16,25 @@ $container-narrow: 750px;
 // limit base container size to make reading easier
 //$container-max: 750px;
 
+/* theme colors pulled from config-theme-colors */
+{% assign btns = site.data.config-theme-colors | where_exp: "item","item.color != nil" %}
+{% if btns != empty %}
+{% for btn in btns %}
+{% assign color = btn.color | strip %}{% if color != empty %}
+${{ btn.color_class | slugify }}: {{ color }};{% endif %}
+{% endfor %}
+$theme-colors: () !default;
+$theme-colors: map-merge(
+  (
+    {% for btn in btns %}{% assign color = btn.color | strip %}{% if color != empty %}
+    "{{ btn.color_class | slugify }}": ${{ btn.color_class | slugify }}{% unless forloop.last %},{% endunless %}
+    {% endif %}{% endfor %}
+  ),
+  $theme-colors
+);
+@import "theme-colors", "theme-utilities";
+{% endif %}
+
 // Import partials.
 @import
   "template", "iastate", "custom"
