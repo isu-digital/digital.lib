@@ -19,6 +19,7 @@ nav_order: 3
             <li>Digital Scholarship Symposium (held annually in spring)</li>
             <li>Networking opportunities with others interested in digital scholarship on campus</li>
         </ul> 
+        {% include button.html text="Book a Consultation" link="https://iastate.libcal.com/appointments/Catalyst?_gl=1*1s7i6l1*_ga*MTg3ODE1NTMxNi4xNjQ2MzIxNjg2*_ga_VZYMPY53XG*MTczMzQxOTY0NC40NTQuMS4xNzMzNDIwNjQ4LjAuMC4w" color="primary" %}
     </div>
     <div class="col-md-4">
         <img src="assets\img\gis-day-2023.jpg" alt="speaker presenting in front of a group at GIS Day 2023" class="img-fluid mb-2">
@@ -36,6 +37,7 @@ nav_order: 3
             <li>Training at a basic level on specific tools or processes</li>
             <li>More in-depth project support or collaboration when time and resources allow</li>
         </ul>
+         {% include button.html text="Book a Consultation" link="https://iastate.libcal.com/appointments/Catalyst?_gl=1*1s7i6l1*_ga*MTg3ODE1NTMxNi4xNjQ2MzIxNjg2*_ga_VZYMPY53XG*MTczMzQxOTY0NC40NTQuMS4xNzMzNDIwNjQ4LjAuMC4w" color="primary" %}
     </div>
     <div class="col-md-4">
         <img src="assets\img\love-data-2024-1.JPG" alt="hand drawn data visualizations taped to a whiteboard for an activity called 'Draw + Doodle + Dot Your Data'" class="img-fluid mb-2">
