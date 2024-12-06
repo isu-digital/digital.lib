@@ -6,17 +6,19 @@
         {% if p.title == 'Student'%}
             <div class="col-md-6">
                 <div class="row pt-4 pb-5 align-items-center">
+                    {% if p.image %}
                     <div class="col-md-4 text-center">
                         <img class="img-fluid rounded-circle lazyload w-75" alt="image of {{ p.name }}" src="{{ p.image }}">
                     </div>
+                    {% endif %}
                     <div class="col-md-8">
                         <p>
                             {% if p.blog-page %}
-                                <strong><a href="{{ p.name | slugify | append: '.html' | prepend: 'pages/' | relative_url }}">{{ p.name }}</a></strong>
+                                <strong><a href="{{ p.name | slugify | append: '.html' | prepend: 'pages/' | relative_url }}">{{ p.name }}</a></strong>,
                             {% else %}
-                                <strong>{{ p.name }}</strong>
+                                <strong>{{ p.name }}</strong>,
                             {% endif %}
-                            , {{ p.title }}<br>    
+                            {{ p.title }}<br>    
                             <br>
                             <a href="mailto:{{ p.email }}">{{ p.email }}</a>
                             {% if p.phone %}{{ p.phone }}{% endif %}

@@ -1,7 +1,7 @@
 ---
 title: People
 nav: People
-permalink: /people.html
+permalink: /people/
 layout: page
 nav_order: 1
 ---

@@ -12,11 +12,11 @@
                     <div class="col-md-8">
                         <p>
                             {% if p.profile-page %}
-                                <strong><a href="{{ p.name | slugify | append: '.html' | prepend: 'pages/people/' | relative_url }}">{{ p.name }}</a></strong>
+                                <strong><a href="{{ p.name | slugify | append: '.html' | prepend: 'pages/people/' | relative_url }}">{{ p.name }}</a></strong>,
                             {% else %}
-                                <strong>{{ p.name }}</strong>
+                                <strong>{{ p.name }}</strong>,
                             {% endif %}
-                            , {{ p.title }}<br>    
+                            {{ p.title }}<br>    
                             <br>
                             <a href="mailto:{{ p.email }}">{{ p.email }}</a>
                             {% if p.phone %}{{ p.phone }}{% endif %}
