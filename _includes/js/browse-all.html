@@ -27,8 +27,6 @@
     ];
     // shuffle items
     shuffle(listDocs);
-
-    // setup list.js options and item template
     var listOptions = {
         valueNames: [ 
             'listTitle',
@@ -67,10 +65,10 @@
                 cardImg = `<p class="text-center"><img src="${values.listImg}" class="img-fluid list-img" alt="${values.listImgAlt}"></p>`;
             } 
             if(values.listGenre) { 
-                cardGenre = ` : ${values.listGenre.split(";").join(" ;")}`;
+                cardGenre = `${values.listGenre.split(";").join(" ;")}`;
             } 
             var card = `<div class="col-md-3">
-                <div class="card mb-3 ${borderColor}">
+                <div class="card mb-3 ${borderColor} project-card" data-status="${cardGenre}" data-type="${values.listType}">
                     <div class="card-body">
                         <h3 class="card-title mt-0"><a class="listTitle" href="${values.listLink}">${values.listTitle}</a></h3>
                         <p class="card-text"><strong class="listType">${values.listType}</strong><span class="hidden">${cardGenre}</span></p>${cardImg}
@@ -80,30 +78,46 @@
             </div>`;
             return card;
         }
-
     };
     // init list.js
     var documentList = new List('documentList', listOptions, listDocs);
 
-    // setup filter function
-    function filterByType() {
-        var filterBtn = document.querySelector('input[name="filterRadio"]:checked');
-        if (filterBtn.value == "show-all") {
-            documentList.filter();
-        } else if (filterBtn.id.includes("filter-genre-")) {
-            documentList.filter(function(item) { 
-                if (item.values().listGenre && item.values().listGenre.includes(filterBtn.value)) { return true; } else { return false } 
-            });
-        } else {
-            documentList.filter(function(item) { 
-                if (item.values().listType == filterBtn.value) { return true; } else { return false } 
-            });
+    let currentStatusFilter = 'all';
+    let currentTypeFilter = 'all';
+
+    function filterProjects(value, filterType, button) {
+        if (filterType === 'status') {
+            currentStatusFilter = value;
+            setActiveButton(button, 'status');
+            if (value !== 'all') {
+                document.getElementById('filter-all-status').checked = false;
+            }
+        } else if (filterType === 'type') {
+            currentTypeFilter = value;
+            setActiveButton(button, 'type');
+            if (value !== 'all') {
+                document.getElementById('filter-all').checked = false;
+            }
         }
+
+        // filter the documentList based on the selected filters
+        documentList.filter(function(item) {
+            var statusMatch = (currentStatusFilter === 'all' || item.values().listGenre === currentStatusFilter);
+            var typeMatch = (currentTypeFilter === 'all' || item.values().listType === currentTypeFilter);
+
+            return statusMatch && typeMatch;
+        });
     }
-    // add filters to radio
-    var filterRadios = document.querySelectorAll('input[name="filterRadio"]');
-    filterRadios.forEach(radio => radio.addEventListener('click', filterByType));
-    
+
+    function setActiveButton(button, filterType) {
+        var buttonGroup = button.parentElement;
+        var buttons = buttonGroup.querySelectorAll('.btn');
+        buttons.forEach(function(btn) {
+            btn.classList.remove('active');
+        });
+        button.classList.add('active');
+    }
+
     // add random shuffle
     function shuffleList() {
         shuffle(listDocs);
@@ -112,6 +126,7 @@
         documentList.add(listDocs);
         filterByType();
     }
+
     var shuffleListBtn = document.getElementById("list_shuffle");
     shuffleListBtn.addEventListener("click", shuffleList);
 

@@ -1,9 +1,10 @@
 ---
 title: Projects
 nav: Projects
-permalink: /projects.html
+permalink: /projects/
 layout: page
 nav_order: 2
+foot: js/browse-all.html
 ---
 
 {% assign current_projects = site.data.dsi-research-projects | where_exp: 'p', 'p.status == "in-progress"' %}
@@ -19,14 +20,12 @@ nav_order: 2
     {% endif %}
     {% for p in random_projects %}
     <div class="col-md-3">
-        <a href="{{ p.link | relative_url }}" aria-label="{{ p.title }}">
         <div class="card mb-3 border-info">
             <div class="card-body">
-                <h3 class="card-title mt-0 text-primary">{{ p.title }}</h3>
+                <h3 class="card-title mt-0"><a href="{{ p.link | relative_url }}">{{ p.title }}</a></h3>
                 <img src="{{ p.image }}" class="img-fluid list-img" alt="{{ p.image_alt }}">
             </div>
         </div>
-        </a>
     </div>
     {% endfor %}
 </div>
@@ -62,15 +61,15 @@ nav_order: 2
                 <input type="text" id="listSearch" class="form-control form-control-lg search" aria-label="Text input to filter list" placeholder="Filter...">
                 <button class="btn btn-lg btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#collapseListOptions" aria-expanded="false" aria-controls="collapseListOptions">options</button>
                 <div class="collapse w-100" id="collapseListOptions">
-                    <div class="card card-body">
+                    <div class="card card-body text-start">
                         <p><strong>Sort by:</strong> </p>
                         <p>
                             <input type="radio" class="btn-check" name="sort_list" id="list_shuffle" autocomplete="off" checked>
-                            <label class="btn btn-outline-secondary-blue m-1" for="list_shuffle">Random</label>
+                            <label class="btn btn-outline-primary m-1" for="list_shuffle">Random</label>
                             <input type="radio" class="btn-check sort" name="sort_list" id="list_title" autocomplete="off" data-sort="listTitle">
-                            <label class="btn btn-outline-secondary-blue m-1" for="list_title">Title</label>
+                            <label class="btn btn-outline-primary m-1" for="list_title">Title</label>
                             <input type="radio" class="btn-check sort" name="sort_list" id="list_type" autocomplete="off" data-sort="listType">
-                            <label class="btn btn-outline-secondary-blue m-1" for="list_type">Type</label>
+                            <label class="btn btn-outline-primary m-1" for="list_type">Type</label>
                         </p>
                     </div>
                 </div>
@@ -79,156 +78,3 @@ nav_order: 2
     </div>
     <div class="mt-5 list row row-cols-1 row-cols-md-2"></div>
 </div>
-
-<!--<div class="filter-container">
-    <div class="btn-group mb-4" role="group" aria-label="Filter by Status">
-        <button type="button" class="btn btn-outline-primary" onclick="filterProjects('all', 'status', this)">All</button>
-        {% for status in statuses %}
-        <button type="button" class="btn btn-outline-primary" onclick="filterProjects('{{ status }}', 'status', this)">{{ status | capitalize }}</button>
-        {% endfor %}
-    </div>
-
-    <div class="btn-group mb-4" role="group" aria-label="Filter by Type">
-        <button type="button" class="btn btn-outline-primary" onclick="filterProjects('all', 'type', this)">All</button>
-        {% for type in types %}
-        <button type="button" class="btn btn-outline-primary" onclick="filterProjects('{{ type }}', 'type', this)">{{ type | capitalize }}</button>
-        {% endfor %}
-    </div>
-</div>
-
-<div class="row" id="projects-container">
-    {% assign projects = site.data.dsi-research-projects %}
-    {% for p in projects %}
-    <div class="col-md-3 project-card" data-status="{{ p.status }}" data-type="{{ p.type }}">
-        <div class="card text-center mb-4">
-            <img src="{{ p.image }}" class="card-img-top" alt="{{ p.image_alt }}">
-            <div class="card-body">
-                <p class="card-title">{{ p.title }}</p>
-                <a href="{{ p.link }}" class="btn btn-outline-primary" target="_blank" rel="noopener">View Project</a>
-            </div>
-        </div>
-    </div>
-    {% endfor %}
-</div>-->
-
-<script src="{{ '/assets/lib/list.min.js' | relative_url }}"></script>
-<script>
-/* Fisher-Yates shuffle https://bost.ocks.org/mike/shuffle/ */
-function shuffle(array) {
-    var m = array.length, t, i;
-    while (m) {
-        i = Math.floor(Math.random() * m--);
-        t = array[m];
-        array[m] = array[i];
-        array[i] = t;
-    }
-    return array;
-}
-// add items
-var listDocs = [
-    {% assign listDocs = site.data.dsi-research-projects | where_exp: 'i','i.ignore != true' %}
-    {% for i in listDocs %}
-    { 
-        {% if i.image %}listImg: "{{ i.image | relative_url }}", listImgAlt: "{{ i.image_alt }}",{% endif %}
-        listLink: "{{ i.link | relative_url }}", 
-        listTitle: {{ i.title | jsonify }},
-        listType: "{{ i.type }}", 
-        {% if i.status %}listGenre: "{{ i.status }}",{% endif %}
-        listText: {{ i.description | default: i.content | strip_html | truncatewords: 25 | jsonify }} 
-    }{% unless forloop.last %},{% endunless %}
-    {% endfor %}
-];
-// shuffle items
-shuffle(listDocs);
-var listOptions = {
-    valueNames: [ 
-        'listTitle',
-        'listType',
-        'listGenre',
-        'listText'
-    ],
-    item: function(values) {
-        //contribute social stack meetings pathways concept Models Of Models For Tool
-        var borderColor = "";
-        var cardImg = "";
-        var cardGenre = "";
-        switch (values.listType) {
-            case "exhibit":
-                borderColor = "border-success";
-                break;
-            case "workshop":
-                borderColor = "border-primary";
-                break;
-            case "collections as data":
-                borderColor = "border-danger";
-                break;
-            case "digital collection":
-                borderColor = "border-warning";
-                break;
-            case "student project":
-                borderColor = "border-info";
-                break;
-            case "digital scholarship":
-                borderColor = "border-secondary";
-                break;
-            default:
-                borderColor = "";
-        }
-        if(values.listImg) {
-            cardImg = `<p class="text-center"><img src="${values.listImg}" class="img-fluid list-img" alt="${values.listImgAlt}"></p>`;
-        } 
-        if(values.listGenre) { 
-            cardGenre = `${values.listGenre.split(";").join(" ;")}`;
-        } 
-        var card = `<div class="col-md-3">
-            <div class="card mb-3 ${borderColor} project-card" data-status="${cardGenre}" data-type="${values.listType}">
-                <div class="card-body">
-                    <h3 class="card-title mt-0"><a class="listTitle" href="${values.listLink}">${values.listTitle}</a></h3>
-                    <p class="card-text"><strong class="listType">${values.listType}</strong><span class="hidden">${cardGenre}</span></p>${cardImg}
-                    <p class="card-text"><span class="listText">${values.listText}</span></p>
-                </div>
-            </div>
-        </div>`;
-        return card;
-    }
-
-};
-// init list.js
-var documentList = new List('documentList', listOptions, listDocs);
-
-let currentStatusFilter = 'all';
-let currentTypeFilter = 'all';
-
-function filterProjects(value, filterType, button) {
-    if (filterType === 'status') {
-        currentStatusFilter = value;
-        setActiveButton(button, 'status');
-        if (value !== 'all') {
-            document.getElementById('filter-all-status').checked = false;
-        }
-    } else if (filterType === 'type') {
-        currentTypeFilter = value;
-        setActiveButton(button, 'type');
-        if (value !== 'all') {
-            document.getElementById('filter-all').checked = false;
-        }
-    }
-
-    // filter the documentList based on the selected filters
-    documentList.filter(function(item) {
-        var statusMatch = (currentStatusFilter === 'all' || item.values().listGenre === currentStatusFilter);
-        var typeMatch = (currentTypeFilter === 'all' || item.values().listType === currentTypeFilter);
-
-        return statusMatch && typeMatch;
-    });
-}
-
-function setActiveButton(button, filterType) {
-    var buttonGroup = button.parentElement;
-    var buttons = buttonGroup.querySelectorAll('.btn');
-    buttons.forEach(function(btn) {
-        btn.classList.remove('active');
-    });
-    button.classList.add('active');
-}
-</script>
