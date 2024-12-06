@@ -4,7 +4,6 @@ nav: Projects
 permalink: /projects.html
 layout: page
 nav_order: 2
-foot: js/browse-all.html
 ---
 
 {% assign current_projects = site.data.dsi-research-projects | where_exp: 'p', 'p.status == "in-progress"' %}
@@ -40,21 +39,23 @@ foot: js/browse-all.html
         </div>
         <div class="col-md-9 text-center">
             <p><strong>Type:</strong>
-                <input type="radio" class="btn-check" name="filterRadio" id="filter-all" autocomplete="off" value="show-all" checked>
-                <label class="btn btn-outline-primary m-1" for="filter-all">All</label>
+                <input type="radio" class="btn-check" name="filterRadioType" id="filter-all" autocomplete="off" value="show-all" checked>
+                <label class="btn btn-outline-primary m-1" for="filter-all" onclick="filterProjects('all', 'type', this)">All</label>
                 {% assign types = listProjects | map: 'type' | compact | uniq | sort %}
                 {% for t in types %}
-                <input type="radio" class="btn-check" name="filterRadio" id="filter-{{ t | slugify }}" autocomplete="off" value="{{ t }}">
-                <label class="btn btn-outline-primary m-1" for="filter-{{ t | slugify }}">{{ t }}</label>
+                <input type="radio" class="btn-check" name="filterRadioType" id="filter-{{ t | slugify }}" autocomplete="off" value="{{ t }}">
+                <label class="btn btn-outline-primary m-1" for="filter-{{ t | slugify }}" onclick="filterProjects('{{ t }}', 'type', this)">{{ t }}</label>
                 {% endfor %}
             </p>
             <p><strong>Status:</strong>
+                <input type="radio" class="btn-check" name="filterRadioStatus" id="filter-all-status" autocomplete="off" value="show-all" checked>
+                <label class="btn btn-outline-secondary m-1" for="filter-all-status" onclick="filterProjects('all', 'status', this)">All</label>
                 {% assign raw_genres = listProjects | map: 'status' | compact | join: ";" | split: ";" %}
                 {% capture genres %}{% for r in raw_genres %}{{ r | strip }};{% endfor %}{% endcapture %}
                 {% assign genres = genres | split: ";" | uniq | sort %}
                 {% for g in genres %}
-                <input type="radio" class="btn-check" name="filterRadio" id="filter-genre-{{ g | slugify }}" autocomplete="off" value="{{ g }}">
-                <label class="btn btn-outline-secondary m-1" for="filter-genre-{{ g | slugify }}">{{ g }}</label>
+                <input type="radio" class="btn-check" name="filterRadioStatus" id="filter-genre-{{ g | slugify }}" autocomplete="off" value="{{ g }}">
+                <label class="btn btn-outline-secondary m-1" for="filter-genre-{{ g | slugify }}" onclick="filterProjects('{{ g }}', 'status', this)">{{ g }}</label>
                 {% endfor %}
             </p>
             <div class="input-group mb-3">
@@ -110,7 +111,91 @@ foot: js/browse-all.html
     {% endfor %}
 </div>-->
 
+<script src="{{ '/assets/lib/list.min.js' | relative_url }}"></script>
 <script>
+/* Fisher-Yates shuffle https://bost.ocks.org/mike/shuffle/ */
+function shuffle(array) {
+    var m = array.length, t, i;
+    while (m) {
+        i = Math.floor(Math.random() * m--);
+        t = array[m];
+        array[m] = array[i];
+        array[i] = t;
+    }
+    return array;
+}
+// add items
+var listDocs = [
+    {% assign listDocs = site.data.dsi-research-projects | where_exp: 'i','i.ignore != true' %}
+    {% for i in listDocs %}
+    { 
+        {% if i.image %}listImg: "{{ i.image | relative_url }}", listImgAlt: "{{ i.image_alt }}",{% endif %}
+        listLink: "{{ i.link | relative_url }}", 
+        listTitle: {{ i.title | jsonify }},
+        listType: "{{ i.type }}", 
+        {% if i.status %}listGenre: "{{ i.status }}",{% endif %}
+        listText: {{ i.description | default: i.content | strip_html | truncatewords: 25 | jsonify }} 
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+];
+// shuffle items
+shuffle(listDocs);
+var listOptions = {
+    valueNames: [ 
+        'listTitle',
+        'listType',
+        'listGenre',
+        'listText'
+    ],
+    item: function(values) {
+        //contribute social stack meetings pathways concept Models Of Models For Tool
+        var borderColor = "";
+        var cardImg = "";
+        var cardGenre = "";
+        switch (values.listType) {
+            case "exhibit":
+                borderColor = "border-success";
+                break;
+            case "workshop":
+                borderColor = "border-primary";
+                break;
+            case "collections as data":
+                borderColor = "border-danger";
+                break;
+            case "digital collection":
+                borderColor = "border-warning";
+                break;
+            case "student project":
+                borderColor = "border-info";
+                break;
+            case "digital scholarship":
+                borderColor = "border-secondary";
+                break;
+            default:
+                borderColor = "";
+        }
+        if(values.listImg) {
+            cardImg = `<p class="text-center"><img src="${values.listImg}" class="img-fluid list-img" alt="${values.listImgAlt}"></p>`;
+        } 
+        if(values.listGenre) { 
+            cardGenre = `${values.listGenre.split(";").join(" ;")}`;
+        } 
+        var card = `<div class="col-md-3">
+            <div class="card mb-3 ${borderColor} project-card" data-status="${cardGenre}" data-type="${values.listType}">
+                <div class="card-body">
+                    <h3 class="card-title mt-0"><a class="listTitle" href="${values.listLink}">${values.listTitle}</a></h3>
+                    <p class="card-text"><strong class="listType">${values.listType}</strong><span class="hidden">${cardGenre}</span></p>${cardImg}
+                    <p class="card-text"><span class="listText">${values.listText}</span></p>
+                </div>
+            </div>
+        </div>`;
+        return card;
+    }
+
+};
+// init list.js
+var documentList = new List('documentList', listOptions, listDocs);
+
 let currentStatusFilter = 'all';
 let currentTypeFilter = 'all';
 
@@ -118,21 +203,23 @@ function filterProjects(value, filterType, button) {
     if (filterType === 'status') {
         currentStatusFilter = value;
         setActiveButton(button, 'status');
+        if (value !== 'all') {
+            document.getElementById('filter-all-status').checked = false;
+        }
     } else if (filterType === 'type') {
         currentTypeFilter = value;
         setActiveButton(button, 'type');
+        if (value !== 'all') {
+            document.getElementById('filter-all').checked = false;
+        }
     }
 
-    var cards = document.querySelectorAll('.project-card');
-    cards.forEach(function(card) {
-        var statusMatch = (currentStatusFilter === 'all' || card.getAttribute('data-status') === currentStatusFilter);
-        var typeMatch = (currentTypeFilter === 'all' || card.getAttribute('data-type') === currentTypeFilter);
+    // filter the documentList based on the selected filters
+    documentList.filter(function(item) {
+        var statusMatch = (currentStatusFilter === 'all' || item.values().listGenre === currentStatusFilter);
+        var typeMatch = (currentTypeFilter === 'all' || item.values().listType === currentTypeFilter);
 
-        if (statusMatch && typeMatch) {
-            card.style.display = 'block';
-        } else {
-            card.style.display = 'none';
-        }
+        return statusMatch && typeMatch;
     });
 }
 
