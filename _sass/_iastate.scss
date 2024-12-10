@@ -8,6 +8,10 @@
     line-height: 1.27778;
 }
 
+.dsi-site-title:hover {
+    color: #C8102E;
+}
+
 .nav-item > a {
     max-width: none;
     padding: 0;
@@ -85,7 +89,7 @@
     padding: 0 .5rem;
 }
 
-.nav-item > a:hover {
+.footer-list > a:hover {
     color: #f1be48;
 }
 
