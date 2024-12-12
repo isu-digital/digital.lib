@@ -7,4 +7,5 @@ image: https://www.lib.iastate.edu/files/styles/image_block/public/images/2023-0
 alt: portrait of Anne Shelley
 bio: Anne oversees the library's Digital Repository and collaborates with faculty and staff on scholarly communications outreach.
 projects: 
+permalink: /people/anne-shelley.html
 ---

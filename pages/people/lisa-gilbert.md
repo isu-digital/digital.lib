@@ -7,4 +7,5 @@ image: https://www.lib.iastate.edu/files/styles/image_block/public/images/2023-0
 alt: portrait of Lisa Gilbert
 bio: Work with Iowa State's faculty, staff and students to deposit their publications into the ISU Digital Repository.
 projects: 
+permalink: /people/lisa-gilbert.html
 ---

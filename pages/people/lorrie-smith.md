@@ -7,4 +7,5 @@ image: https://www.lib.iastate.edu/files/styles/image_block/public/images/2023-0
 alt: portrait of Lorrie Smith
 bio: Work with Faculty to deposit their publications into the Digital Repository
 projects: 
+permalink: /people/lorrie-smith.html
 ---

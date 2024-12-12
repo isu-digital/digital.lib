@@ -7,4 +7,5 @@ image: https://www.lib.iastate.edu/files/styles/image_block/public/images/2023-0
 alt: portrait of Olivia Wikle
 bio: Olivia manages the Digital Scholarship & Initiatives department and has expertise in static web and digital research.
 projects: 
+permalink: /people/olivia-wikle.html
 ---

@@ -7,4 +7,5 @@ image: https://www.lib.iastate.edu/files/styles/image_block/public/images/2023-0
 alt: portrait of Lori Bousson
 bio:  Lori is the web developer for Digital Scholarship and Initiatives (DSI).
 projects: 
+permalink: /people/lori-bousson.html
 ---

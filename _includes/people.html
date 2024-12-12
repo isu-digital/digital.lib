@@ -12,7 +12,7 @@
                     <div class="col-md-8">
                         <p>
                             {% if p.profile-page %}
-                                <strong><a href="{{ p.name | slugify | append: '.html' | prepend: 'pages/people/' | relative_url }}">{{ p.name }}</a></strong>,
+                                <strong><a href="{{ p.name | slugify | append: '.html' | prepend: '/people/' | relative_url }}">{{ p.name }}</a></strong>,
                             {% else %}
                                 <strong>{{ p.name }}</strong>,
                             {% endif %}

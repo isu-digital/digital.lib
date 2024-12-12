@@ -7,4 +7,5 @@ image: https://www.lib.iastate.edu/files/styles/image_block/public/images/2023-1
 alt: portrait of Samjhana Acharya
 bio: Samjhana works with Iowa State's faculty, staff, and students to deposit their publications into the ISU Digital Repository.
 projects: 
+permalink: /people/samjhana-acharya.html
 ---
