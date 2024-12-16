@@ -9,17 +9,46 @@ layout: page
     background-size: cover;
     height: 75vh;
   }
+  .responsive-container {
+    position: relative;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 50%), url('{{ 'assets/img/AdobeStock_806484864-braintree.png' | relative_url }}');
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: right;
+    padding: 25px;
+  }
+  .photo-credit {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 0.4rem;
+    color: rgb(82, 81, 81);
+  }
+
+  @media (max-width: 768px) {
+    .responsive-container {
+      background-size: cover;
+      background-position: center;
+    }
+    .responsive-container .col-md-8 {
+      background: rgba(255, 255, 255, 0.8); /* White with 80% opacity */
+      padding: 15px;
+      border-radius: 5px;
+    }
+  }
 </style>
 
-<h1 class="py-0">Innovate Together</h1>
+<div class="container responsive-container">
+  <h1 class="py-0">Innovate Together</h1>
 
-<hr style="border: none; height: 4px; background-color: #f1be48; width: 100px; margin: 7px 0;">
+  <hr style="border: none; height: 4px; background-color: #f1be48; width: 100px; margin: 7px 0;">
 
-<div class="col-md-8">
-  <p style="font-size: 1.5rem;">Digital Scholarship & Initiatives (DSI) partners on digital research, empowers users to learn experimental technologies, and shares Iowa State University scholarship and history online</p>
-
-  <a class="btn btn-outline-primary" href="{{ '/collaborate.html' | relative_url }}">Work with us</a>
-
+  <div class="col-md-8">
+    <p style="font-size: 1.5rem;">Digital Scholarship & Initiatives (DSI) partners on digital research, empowers users to learn experimental technologies, and shares Iowa State University scholarship and history online</p>
+    <a class="btn btn-outline-primary" href="{{ '/collaborate.html' | relative_url }}">Work with us</a>
+    <div class="photo-credit">Image by Adobe Stock</div>
+  </div>
+  
 </div>
 
 {% assign projects = site.data.dsi-research-projects %}
