@@ -5,14 +5,32 @@ permalink: /learn.html
 layout: page
 nav_order: 5
 ---
+{% assign events = site.data.dsi-events %}
 ## Workshops
-
+### Fall 2024
+<div class="row">
+    {% for e in events %}
+    {% if e.type == "workshop" %}
+    <div class="col-md-6">
+        <ul>
+            <li>
+                <h5>{{ e.name }}</h5>
+                {{ e.date }}, {{ e.time }}, {{ e.location }}<br>
+                <strong>More Info:</strong> <a href="{{ e.link }}">{{ e.link }}</a>
+            </li>
+        </ul>
+    </div>    
+    {% endif %}
+    {% endfor %}
+</div>
 
 ## Upcoming Events
-{% assign events = site.data.dsi-events %}
+
 <div class="row">
     {% for e in events %}
     {% if e.past != "true" %}
+    {% if e.type != "workshop" %}
+
 
     <div class="col-md-3">
         <div class="card text-center mb-4">
@@ -25,6 +43,7 @@ nav_order: 5
         </div>
     </div>
     {% endif %}
+    {% endif %}
     {% endfor %}
 </div>
 
@@ -33,6 +52,7 @@ nav_order: 5
 <div class="row">
     {% for e in events %}
     {% if e.past == "true" %}
+    {% if e.type != "workshop" %}
     <div class="col-md-3">
         <div class="card text-center mb-4">
             <img src="{{ e.image }}" class="card-img-top" alt="{{ e.image_alt }}">
@@ -43,6 +63,7 @@ nav_order: 5
             </div>
         </div>
     </div>
+    {% endif %}
     {% endif %}
     {% endfor %}
 </div>
