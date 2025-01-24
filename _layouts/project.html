@@ -2,16 +2,16 @@
 layout: page
 ---
 
-{%assign image = page.image %}
-{%assign alt = page.alt %}
+{% assign image = page.image %}
+{% assign alt = page.alt %}
 
-<div style="display: flex; justify-content: flex-end;">
-    <div style="flex: 1;">
-        <h3>Project lead(s): {{page.lead}}</h2>
-        <h3>Collaborators: {{page.collaborators}}</h2>
-        <p>{{page.description}}</p>
+<div class="row pt-3">
+    <div class="col-md-8">
+        <p class="fs-5 fw-bold text-cardinal">Project lead(s): {{ page.lead }}</p>
+        <p class="fs-5 fw-bold text-cardinal">Collaborators: {{ page.collaborators }}</p>
+        <p>{{ page.description }}</p>
     </div>
-    <div>
+    <div class="col-md-4">
         {% include figure.html img=image alt=alt %}
     </div>
 </div>

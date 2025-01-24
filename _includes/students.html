@@ -20,7 +20,9 @@
                             {% endif %}
                             {{ p.title }}<br>    
                             <br>
+                            {% if p.email %}
                             <a href="mailto:{{ p.email }}">{{ p.email }}</a>
+                            {% endif %}
                             {% if p.phone %}{{ p.phone }}{% endif %}
                         </p>
                     </div>

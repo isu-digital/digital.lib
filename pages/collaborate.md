@@ -5,7 +5,9 @@ nav: Collaborate
 permalink: /collaborate.html
 nav_order: 3
 ---
-{% include jumbotron.html heading = "Our Expertise" text = "We specialize in a variety of digital methods and skills including GIS, text analysis, data visualization, digital storytelling, static web development, and digital pedagogy." %}
+
+{% include jumbotron.html heading="Our Expertise" text="We specialize in a variety of digital methods and skills including GIS, text analysis, data visualization, digital storytelling, static web development, and digital pedagogy." %}
+
 ## Teaching and Learning
 <a name="teaching-and-learning"></a>
 <div class="row">
@@ -43,6 +45,7 @@ nav_order: 3
         <img src="assets\img\love-data-2024-1.JPG" alt="hand drawn data visualizations taped to a whiteboard for an activity called 'Draw + Doodle + Dot Your Data'" class="img-fluid mb-2">
     </div>
 </div>
+
 ## Fellowship Opportunities
 <a name="fellowship-opportunities"></a>
 Check back later for upcoming fellowship opportunities.

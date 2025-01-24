@@ -4,25 +4,35 @@ layout: page
 {% assign author_name = page.author_name %}
 {% assign image = page.image %}
 {% assign alt = page.alt %}
-<div style="display: flex; justify-content: flex-end;">
-    <div style="flex: 1;">
-      <p>{{page.job_title}}</p>
-        <h3>Bio: </h3><p>{{page.bio}}</p>
-        <h3>Current Projects: </h3><p>{{page.projects}}</p>
-    </div>
-    <div>
-        {% include figure.html img=page.image alt=page.alt width="50%" %}
-    </div>
-</div>
-<h2>Posts by {{ author_name }}</h2>
 
-<ul>
-  {% for post in site.posts %}
-    {% if post.author == author_name %}
-      <li>
-        <a href="{{ post.url }}">{{ post.title }}</a>
-        <p>{{ post.date | date: "%B %d, %Y" }}</p>
-      </li>
+<div class="row">
+  <div class="col-md-8">
+    <p>{{ page.job_title }}</p>
+    <p class="fs-4 fw-bold text-cardinal pt-2">Bio: </p>
+    <p>{{ page.bio }}</p>
+    {% if page.projects %}
+    <p class="fs-4 fw-bold text-cardinal pt-2">Current Projects: </p>
+      <p>{{ page.projects }}</p>
     {% endif %}
-  {% endfor %}
-</ul>
+  </div>
+  <div class="col-md-4">
+    {% include figure.html img=page.image alt=page.alt width="50%" %}
+  </div>
+
+  {%- assign authors = site.posts | map: "author" | uniq -%}
+  {%- if authors contains author_name -%}
+  <div class="col-md-12">
+    <p class="fs-4 fw-bold text-cardinal pt-2">Posts by {{ author_name }}:</p>
+    <ul>
+      {% for post in site.posts %}
+        {% if post.author == author_name %}
+          <li>
+            <a href="{{ post.url }}">{{ post.title }}</a>
+            <p>{{ post.date | date: "%B %d, %Y" }}</p>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+  {%- endif -%}
+</div>
