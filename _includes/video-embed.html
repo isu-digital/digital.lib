@@ -18,7 +18,7 @@
 <div class="text-center ">
     <figure class="figure w-{{ include.width | default: '100' }}">
         <div class="ratio ratio-{{ include.ratio | default: '16x9' }}">
-            <iframe src="https://www.youtube-nocookie.com/embed/{{ include.youtubeid }}?rel=0&modestbranding=1" allowfullscreen alt="{{ include.alt }}"></iframe>
+            <iframe src="https://www.youtube-nocookie.com/embed/{{ include.youtubeid }}?rel=0&modestbranding=1" allowfullscreen title="{{ include.alt }}"></iframe>
         </div>
         {% if include.caption %}<figcaption class="figure-caption">{{ include.caption }}</figcaption>{% endif %}
     </figure>

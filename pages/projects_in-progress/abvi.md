@@ -1,4 +1,7 @@
 ---
+# 
+---
+
 layout: project
 title: Amplifying Black Voices in Iowa
 lead: Laura Sullivan, Amy Bishop, Felicite Wolfe
@@ -7,4 +10,3 @@ description: The African American Museum of Iowa (AAMI), Des Moines Public Libra
 image: assets/img/clir-red-symbol.jpg
 alt: Council on Library and Information Resources logo
 permalink: /projects/abvi.html
----
