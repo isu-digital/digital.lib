@@ -10,10 +10,14 @@ layout: page
         <p class="fs-5 fw-bold text-cardinal">Project lead(s): {{ page.lead }}</p>
         <p class="fs-5 fw-bold text-cardinal">Collaborators: {{ page.collaborators }}</p>
         <p>{{ page.description }}</p>
+        
+        {% if page.blog_link %}
+        <p><a href="{{ page.blog_link }}" target="_blank" rel="noopener">Project Blog</a></p>
+        {% endif %}
     </div>
     <div class="col-md-4">
         {% include figure.html img=image alt=alt %}
     </div>
 </div>
 
-{{content}}
+{{ content }}

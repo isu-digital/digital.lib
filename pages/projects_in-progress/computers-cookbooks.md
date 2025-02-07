@@ -7,4 +7,5 @@ description: This project will create and examine a text corpus of community coo
 image: https://historicexhibits.lib.iastate.edu/iowacookbook/Images/toledoclub.jpg
 alt: Cover of the Toledo Women's Club cookbook with image of historic house
 permalink: /projects/computers-cookbooks.html
+blog_link: https://emanderson811.github.io/computers-reading-cookbooks/
 ---
