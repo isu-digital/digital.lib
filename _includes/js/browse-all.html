@@ -35,7 +35,7 @@
             'listText'
         ],
         item: function(values) {
-            //contribute social stack meetings pathways concept Models Of Models For Tool
+            // assign colors based on project type
             var borderColor = "";
             var cardImg = "";
             var cardGenre = "";
@@ -70,12 +70,11 @@
             }
             if(values.listType) {
                 cardType = `${values.listType.split(";").join("; ")}`;
-                //console.log(cardType);
             } 
             var card = `<div class="col-md-3">
                 <div class="card mb-3 ${borderColor} project-card" data-status="${cardGenre}" data-type="${values.listType}">
                     <div class="card-body">
-                        <h3 class="card-title mt-0"><a class="listTitle" href="${values.listLink}">${values.listTitle}</a></h3>
+                        <h3 class="card-title mt-0"><a class="listTitle" href="${values.listLink}" target="_blank" rel="noopener">${values.listTitle}</a></h3>
                         <p class="card-text"><strong class="listType">${cardType}</strong><span class="hidden">${cardGenre}</span></p>${cardImg}
                         <p class="card-text"><span class="listText">${values.listText}</span></p>
                     </div>
