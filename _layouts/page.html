@@ -3,7 +3,8 @@ layout: default
 ---
 
 {% unless page.title == "Digital Scholarship and Initiatives" %}
-<div class="container my-3">
+<div class="container container-narrow my-3">
+    {% include template/breadcrumbs.html %}
     {% if page.title %}<h1>{{ page.title }}</h1>{% endif %}
     {{ content }}
 </div>
