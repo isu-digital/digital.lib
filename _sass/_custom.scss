@@ -129,3 +129,18 @@ ul.post-list {
     list-style-type: none;
     padding-left: 0;
 }
+
+.breadcrumb {
+    color: #7c2529;
+    font-weight: 700;
+    padding: 0.75rem 0rem;
+}
+
+.breadcrumb-item a:hover {
+    color: #C8102E;
+}
+
+
+.breadcrumb-item.active {
+    color: #C8102E !important;
+}
