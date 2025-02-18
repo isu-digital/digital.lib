@@ -70,7 +70,7 @@ google-analytics-id:
   #    permalink: /:basename:output_ext
 show_excerpts: true
 # ignore stuff
-exclude: [docs/, Rakefile, README.md, LICENSE]
+exclude: [docs/, Rakefile, README.md, LICENSE, favicon.ico]
 
 # Plugins
 plugins_dir: _plugins
