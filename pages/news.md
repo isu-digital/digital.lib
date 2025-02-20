@@ -5,11 +5,8 @@ nav: News
 permalink: /news.html
 nav_order: 4
 ---
-{% if site.paginate %}
-  {% assign posts = paginator.posts %}
-{% else %}
-  {% assign posts = site.posts %}
-{% endif %}
+
+{% assign posts = site.posts %}
 
 {%- if posts.size > 0 -%}
   {%- if page.list_title -%}
@@ -40,20 +37,16 @@ nav_order: 4
   </ul>
 {%- endif -%}
 
-{% if site.paginate %}
-  <div class="pager">
-    <ul class="pagination">
-      {%- if paginator.previous_page -%}
-        <li><a href="{{ paginator.previous_page_path | relative_url }}" class="previous-page">{{ paginator.previous_page }}</a></li>
-      {%- else -%}
-        <li><div class="pager-edge">•</div></li>
-      {%- endif -%}
-      <li><div class="current-page">{{ paginator.page }}</div></li>
-      {%- if paginator.next_page -%}
-        <li><a href="{{ paginator.next_page_path | relative_url }}" class="next-page">{{ paginator.next_page }}</a></li>
-      {%- else -%}
-        <li><div class="pager-edge">•</div></li>
-      {%- endif -%}
-    </ul>
-  </div>
-{% endif %}
+----------
+
+{% for p in posts %}
+<div class="card mb-3">
+    <div class="card-body">
+        <h3 id="{{ u.title | slugify }}" class="card-title">{{ page.list_title }}</h3>
+        <div class="card-text">
+        <p><small>Updated: {{ post.date | date_to_string: "ordinal", "US" }}</small></p>
+        {{ post.content }}
+        </div>
+    </div>
+</div>
+{% endfor %}
