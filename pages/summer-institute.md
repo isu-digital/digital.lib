@@ -16,7 +16,7 @@ Throughout the week, you'll have plenty of opportunities to collaborate and conn
 
 Interested applicants should prepare a statement of interest (no more than 500 words) describing interest in learning digital humanities methods and outlining any previous experience in this field (preveious experience is not required). If accepted, applicants are expected to attend the full workshop program, May 19-22, 2025. View the full schedule below.
 
-**Questions?** Contact Michael Cummings, digital scholarship librarian, [mrc2@iastate.edu](mailto:mrc2@iastate.edu)
+**Questions?** Contact Michael Cummings, Digital Scholarship Librarian, [mrc2@iastate.edu](mailto:mrc2@iastate.edu)
 
 <a class="btn btn-primary btn-lg" href="https://forms.office.com/r/tTfhGzDrXD">Apply Today</a>
 
