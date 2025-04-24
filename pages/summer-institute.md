@@ -18,11 +18,11 @@ Interested applicants should prepare a statement of interest (no more than 500 w
 If accepted, applicants are expected to attend the full workshop program, May 19-22, 2025.
 View the full schedule below.
 
-**Applications are due April 21, 2025.**
+**Applications Currently Closed**
 
 **Questions?** Contact Michael Cummings, Digital Scholarship Librarian, [mrc2@iastate.edu](mailto:mrc2@iastate.edu)
 
-<a class="btn btn-primary btn-lg" href="https://forms.office.com/r/tTfhGzDrXD">Apply Today</a>
+<!--<a class="btn btn-primary btn-lg" href="https://forms.office.com/r/tTfhGzDrXD">Apply Today</a>-->
 
 ## Schedule
 {:.pb-0}

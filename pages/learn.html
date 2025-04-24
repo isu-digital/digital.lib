@@ -10,13 +10,14 @@ nav_order: 5
 {%- assign upcoming-events = site.data.dsi-events | where_exp: 'event', 'event.past != "true" ' -%}
 {%- assign past-events = site.data.dsi-events | where_exp: 'event', 'event.past == "true"' | sort: "date-iso" | reverse -%}
 
-<div class="p-5 mb-4 bg-light rounded-3">
+<!--SIDI-->
+<!--<div class="p-5 mb-4 bg-light rounded-3">
     <div class="container-fluid text-center">
         <p class="display-6 fw-bold merriweather">Summer Institute for Digital Inquiry - Now Accepting Applications!</p>
         <p class="fs-5">The Library's <a href="{{ '/learn/summer-institute.html' | relative_url }}" class="fw-bold">Summer Institute for Digital Inquiry: Computational Methods for Grad Students</a> is now accepting applications from Iowa State graduate students. This free 4-day intensive workshop provides foundational training in data management, text analysis, digital storytelling, and geospatial analysis. <span class="fw-bold">Applications are due April 21, 2025.</span></p>
         <a class="btn btn-primary btn-lg" href="{{ '/learn/summer-institute.html' | relative_url }}">Space is limited—apply soon!</a>
     </div>
-</div>
+</div>-->
 
 
 <h2>Workshops and Events</h2>
