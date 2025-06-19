@@ -1,0 +1,15 @@
+---
+layout: page
+title: Search Results
+permalink: /search.html
+---
+
+<div class="container mt-4">
+  <h1>Search Results</h1>
+  {% include search-filters.html %}
+  <div class="mt-5 list row row-cols-1 row-cols-md-2">
+    {% for item in site.data.metadata %}
+      {% include item-card.html item=item %}
+    {% endfor %}
+  </div>
+</div>
