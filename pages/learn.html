@@ -7,8 +7,6 @@ nav_order: 5
 ---
 
 {%- assign workshops = site.data.dsi-workshops -%}
-{%- assign upcoming-events = site.data.dsi-events | where_exp: 'event', 'event.past != "true" ' -%}
-{%- assign past-events = site.data.dsi-events | where_exp: 'event', 'event.past == "true"' | sort: "date-iso" | reverse -%}
 
 <!--SIDI-->
 <!--<div class="p-5 mb-4 bg-light rounded-3">
@@ -37,44 +35,46 @@ nav_order: 5
     {%- endfor -%}
     </div>
     <div class="col-md-6">
-        <h2 class="pb-0">Events</h2>
-        <div class="ps-md-5">
-            {%- if upcoming-events.size > 0 -%}
-            <p class="fs-4 fw-bold text-cardinal pt-2 ps-5 ps-md-0">Upcoming</p>
-            {%- for e in upcoming-events -%}
-            <div class="row">
-                <div class="col-md-5 text-center text-md-start">
-                    <img src="{{ e.image }}" class="square-img rounded" alt="{{ e.image_alt }}">
-                </div>
-                <div class="col-md-7 text-center text-md-start pt-2 pt-md-0">
-                    <div class="card-body">
-                        <h3 class="card-title mt-0">{{ e.name }}</h3>
-                        <p>{{ e.date }}, {{ e.location }}</a></p>
-                        <p class="card-text"><a href="{{ e.link }}" class="btn btn-sm btn-outline-primary" target="_blank" rel="noopener">More Info</a></p>
-                    </div>
-                </div>
-            </div>
-            {%- endfor -%}
-            {%- endif -%}
-
-            <p class="fs-4 fw-bold text-cardinal pt-5 ps-5 ps-md-0">Past</p>
-            {%- for e in past-events limit:3 -%}
-            <div class="row py-3 py-md-2">
-                <div class="col-md-5 text-center text-md-start">
-                    <img src="{{ e.image }}" class="square-img rounded" alt="{{ e.image_alt }}">
-                </div>
-                <div class="col-md-7 text-center text-md-start pt-2 pt-md-0">
-                    <div class="card-body">
-                        <h3 class="card-title mt-0">{{ e.name }}</h3>
-                        <p>{{ e.date }}, {{ e.location }}</a></p>
-                        <p class="card-text"><a href="{{ e.link }}" class="btn btn-sm btn-outline-primary" target="_blank" rel="noopener">More Info</a></p>
-                    </div>
-                </div>
-            </div>
-            {%- endfor -%}
-            <div class="text-center">
-                <a class="btn btn-lg btn-outline-secondary-red my-4" href="{{ '/learn/workshop-archive.html' | relative_url }}">View all past events</a>
-            </div>
+    <h2 class="pb-0">Events</h2>
+    <div class="ps-md-5">
+        <p class="fs-4 fw-bold text-cardinal pt-2 ps-5 ps-md-0">Upcoming</p>
+        <div id="upcoming-events"></div>
+        <p class="fs-4 fw-bold text-cardinal pt-5 ps-5 ps-md-0">Past</p>
+        <div id="past-events"></div>
+        <div class="text-center">
+            <a class="btn btn-lg btn-outline-secondary-red my-4" href="/learn/workshop-archive.html">View all past events</a>
         </div>
     </div>
 </div>
+
+<script>
+fetch('/assets/data/events.json')
+  .then(response => response.json())
+  .then(events => {
+    const today = new Date().toISOString().slice(0, 10);
+    const upcoming = events.filter(e => e['date-iso'] >= today)
+                           .sort((a, b) => a['date-iso'].localeCompare(b['date-iso']));
+    const past = events.filter(e => e['date-iso'] < today)
+                       .sort((a, b) => b['date-iso'].localeCompare(a['date-iso']));
+
+    function renderEvent(e) {
+      return `
+        <div class="row py-3 py-md-2">
+          <div class="col-md-5 text-center text-md-start">
+            <img src="${e.image}" class="square-img rounded" alt="${e.image_alt}">
+          </div>
+          <div class="col-md-7 text-center text-md-start pt-2 pt-md-0">
+            <div class="card-body">
+              <h3 class="card-title mt-0">${e.name}</h3>
+              <p>${e.date}${e.location ? ', ' + e.location : ''}</p>
+              <p class="card-text"><a href="${e.link}" class="btn btn-sm btn-outline-primary" target="_blank" rel="noopener">More Info</a></p>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    document.getElementById('upcoming-events').innerHTML = upcoming.map(renderEvent).join('');
+    document.getElementById('past-events').innerHTML = past.slice(0, 3).map(renderEvent).join('');
+  });
+</script>
