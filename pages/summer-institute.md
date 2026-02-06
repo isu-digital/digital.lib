@@ -46,9 +46,9 @@ View the full schedule below.
 ### Wednesday, May 20
 
 - **8:30-9am**: coffee, light pastries provided
-- **9am-12pm**: Digital Storytelling and StoryMaps 
+- **9am-12pm**: Introduction to Geospatial Analysis with ArcGIS Online and Leaflet 
 - **12-1pm**: lunch provided
-- **1-4pm**: Building a Digital Exhibit 
+- **1-4pm**: Introduction to Digital Storytelling with StoryMaps and Twine 
 
 ### Thursday, May 21
 
