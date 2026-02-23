@@ -6,21 +6,67 @@ layout: page
 {% assign alt = page.alt %}
 
 <div class="row">
-  <div class="col-md-8">
+  <div class="col-md-4 order-1 order-md-2">
+    {% include figure.html img=page.image alt=page.alt width="70%" %}
+    <div class="text-center">
+      {% if page.appointment_link %}
+        <a class="btn btn-primary" href="{{ page.appointment_link }}" role="button" target="blank" rel="noopener noreferrer">Schedule Appointment</a>
+      {% endif %}
+      {% if page.email %}
+        <p class="pt-2"><strong>Email:</strong> <a href="mailto:{{ page.email }}">{{ page.email }}</a></p>
+      {% endif %}
+    </div>
+  </div>
+  <div class="col-md-8 order-2 order-md-1">
     <p>{{ page.job_title }}</p>
     <p class="fs-4 fw-bold text-cardinal pt-2">Bio: </p>
     <p>{{ page.bio }}</p>
-    {% if page.projects %}
-    <p class="fs-4 fw-bold text-cardinal pt-2">Current Projects: </p>
+    {% if page.projects and page.projects[0].title == nil %}
+      <p class="fs-4 fw-bold text-cardinal pt-2">Current Projects: </p>
       <p>{{ page.projects }}</p>
+    {% elsif page.projects %}
+      <p class="fs-4 fw-bold text-cardinal pt-2">Current Projects</p>
+      <div class="row">
+        {% for project in page.projects %}
+        <div class="col-md-4">
+          <div class="card mb-3 border-info">
+            <div class="card-body">
+              <h3 class="card-title mt-0">
+                <a href="{{ project.link | relative_url }}" target="_blank" rel="noopener">{{ project.title }}</a>
+              </h3>
+              <img src="{{ project.image }}" class="img-fluid list-img" alt="{{ project.image_alt }}">
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="py-4"></div>
     {% endif %}
-  </div>
-  <div class="col-md-4">
-    {% include figure.html img=page.image alt=page.alt width="50%" %}
-  </div>
+    {%- assign workshops = site.data.dsi-workshops -%}
+    {%- assign has_workshop = false -%}
+    {%- for w in workshops -%}
+      {%- if w.instructors contains page.title -%}
+        {%- assign has_workshop = true -%}
+      {%- endif -%}
+    {%- endfor -%}
+    {%- if has_workshop -%}
+      <p class="fs-4 fw-bold text-cardinal pt-2">Workshops: </p>
+      <ul>
+        {%- for w in workshops -%}
+          {%- if w.instructors contains page.title -%}
+            <li>
+              <a href="{{ w.link }}" target="_blank" rel="noopener">{{ w.name }}</a>
+            </li>
+          {%- endif -%}
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
+      </div>
+</div>
 
-  {%- assign authors = site.posts | map: "author" | uniq -%}
-  {%- if authors contains author_name -%}
+{%- assign authors = site.posts | map: "author" | uniq -%}
+{%- if authors contains author_name -%}
   <div class="col-md-12">
     <p class="fs-4 fw-bold text-cardinal pt-2">Posts by {{ author_name }}:</p>
     <ul>
@@ -34,5 +80,6 @@ layout: page
       {% endfor %}
     </ul>
   </div>
-  {%- endif -%}
-</div>
+{%- endif -%}
+
+{{ content }}
