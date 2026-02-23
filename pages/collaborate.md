@@ -51,4 +51,9 @@ nav_order: 3
 ## Fellowship Opportunities
 {:.pb-0 .pt-2}
 
-Check back later for upcoming fellowship opportunities.
+
+The **Digital Inquiry Fellowship** offers paid, mentored opportunities for graduate students to explore and apply digital methods to their research or teaching. Fellows work with Digital Scholarship Librarians to either build a project or explore a methodology, and present their outcomes at the annual Digital Scholarship Symposium.
+
+Applications open March 23rd!
+
+[Learn more about the Digital Inquiry Fellowship](/collaborate/fellowship.html){:.btn .btn-primary}
