@@ -14,7 +14,7 @@ foot: js/browse-all.html
 <div class="row">
     <h2 class="pb-0">Current Projects</h2>
     {% if current_projects.size > 4 %}
-    {% assign random_projects = projects | sample: 4 %}
+    {% assign random_projects = current_projects | sample: 4 %}
     {% else %}
     {% assign random_projects = current_projects %}
     {% endif %}
