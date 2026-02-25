@@ -20,7 +20,7 @@ layout: page
   <div class="col-md-8 order-2 order-md-1">
     <p>{{ page.job_title }}</p>
     <p class="fs-4 fw-bold text-cardinal pt-2">Bio: </p>
-    <p>{{ page.bio }}</p>
+    <p>{{ page.bio | markdownify }}</p>
     {% if page.projects and page.projects[0].title == nil %}
       <p class="fs-4 fw-bold text-cardinal pt-2">Current Projects: </p>
       <p>{{ page.projects }}</p>
