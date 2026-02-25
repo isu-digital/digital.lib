@@ -15,6 +15,10 @@ projects:
    link: https://emanderson811.github.io/computers-reading-cookbooks/
    image: https://isuu00001library103stg.z21.web.core.windows.net/assets/media/toledoclub.jpg
    image_alt: "cover of a cookbook with a black and white etching of a historical building"
+ - title: The Day Edition
+   link: https://emanderson811.github.io/day-edition/
+   image: https://emanderson811.github.io/day-edition/assets/day-title-page.jpg
+   image_alt: "cover of the print edition of The Iowa State University Campus and Its Buildings: 1859-1979"
 permalink: /people/erin-ridnour.html
 appointment_link: https://iastate.libcal.com/appointments/ridnour
 email: emanders@iastate.edu
