@@ -34,7 +34,7 @@ Additionally, a group of library staff participated in a hackathon to explore th
 
 [*Computers Reading Cookbooks*](https://emanderson811.github.io/computers-reading-cookbooks/) is a collections-as-data project examining a selection of community cookbooks from the Library’s Iowa Cookbook Collection. Using Python and natural language processing tools, this project analyzes the cookbook corpus to identify shared food traditions, trace how dishes evolve over time, and identify both common and culturally distinct recipes across Iowa communities.  
 
-For more information contact [Erin Ridnour](mailto:emanders@iastate.edu).
+For more information contact [Erin Ridnour](https://digital.lib.iastate.edu/people/erin-ridnour.html).
 
 <style>
 .desktop-only { display: block; }
