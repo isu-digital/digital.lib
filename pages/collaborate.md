@@ -56,4 +56,4 @@ The **Digital Inquiry Fellowship** offers paid, mentored opportunities for gradu
 
 Applications open March 23rd!
 
-[Learn more about the Digital Inquiry Fellowship](/collaborate/fellowship.html){:.btn .btn-primary}
+[Learn more about the Digital Inquiry Fellowship](/learn/fellowship.html){:.btn .btn-primary}

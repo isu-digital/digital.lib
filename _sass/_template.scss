@@ -57,6 +57,16 @@ a { text-decoration: none; }
     }
 }
 
+/* narrow container */ 
+@if variable-exists(container-narrowest) { 
+    @media (min-width:992px){
+        .container-narrowest{max-width:$container-narrowest}
+    }
+    @media (min-width:1200px){
+        .container-narrowest{max-width:$container-narrowest}
+    }
+}
+
 /* change container size for easier reading */
 @if variable-exists(container-max) {
     @media (min-width:992px){
