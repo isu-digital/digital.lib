@@ -18,11 +18,9 @@ Interested applicants should prepare a statement of interest (no more than 500 w
 If accepted, applicants are expected to attend the full workshop program, May 18-21, 2026.
 View the full schedule below.
 
-**Applications Open March 23, 2026**
-
 **Questions?** Contact Michael Cummings, Digital Scholarship Librarian, [mrc2@iastate.edu](mailto:mrc2@iastate.edu)
 
-<!--<a class="btn btn-primary btn-lg" href="https://forms.office.com/r/4a19RgJFC4">Apply Today</a>-->
+<a class="btn btn-primary btn-lg" href="https://forms.office.com/r/4a19RgJFC4">Apply Today</a>
 
 ## Schedule
 {:.pb-0}
