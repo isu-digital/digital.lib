@@ -28,9 +28,9 @@ layout: page-narrow
     </div>
 </div>
 
-<!--<div class="text-center">
+<div class="text-center">
     <a class="btn btn-primary btn-lg mb-4" href="https://forms.office.com/r/tTfhGzDrXD">Apply Today!</a>
-</div>-->
+</div>
 
 ***Questions?*** Contact **[Erin Ridnour](mailto:emanders@iastate.edu)**, Digital Scholarship Librarian.
 
