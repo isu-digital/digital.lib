@@ -29,7 +29,7 @@ layout: page-narrow
 </div>
 
 <div class="text-center">
-    <a class="btn btn-primary btn-lg mb-4" href="https://forms.office.com/r/tTfhGzDrXD">Apply Today!</a>
+    <a class="btn btn-primary btn-lg mb-4" href="https://go.iastate.edu/UW4ETU">Apply Today!</a>
 </div>
 
 ***Questions?*** Contact **[Erin Ridnour](mailto:emanders@iastate.edu)**, Digital Scholarship Librarian.
