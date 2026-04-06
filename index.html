@@ -92,7 +92,7 @@ layout: page
     <div class="col-md-4">
         <h2 class="pb-0">Upcoming Events</h2>
 
-        <div id="api_upc_cid13240_iid3287"></div><script async type="text/javascript" src="https://api3.libcal.com/api_events.php?iid=3287&m=upc&cid=13240&c=&audience=1990&d=&l=5&simple=ul_date&context=object&format=js"> </script>
+        <div id="upcoming-events"></div>
         <hr>
 
         <div class="text-center">
@@ -130,3 +130,29 @@ layout: page
     </div>
   </div>
 </div>
+
+<script>
+Promise.all([
+  fetch('/assets/data/events.json').then(r => r.json()),
+  fetch('/assets/data/workshops.json').then(r => r.json())
+]).then(([events, workshops]) => {
+  const allEvents = events.concat(workshops);
+  const today = new Date().toISOString().slice(0, 10);
+  const upcoming = allEvents.filter(e => e['date-iso'] >= today)
+                           .sort((a, b) => a['date-iso'].localeCompare(b['date-iso']));
+
+  function renderEvent(e) {
+    return `
+      <div class="mb-4">
+        <div class="card-body">
+          <h3 class="card-title mt-0">${e.name}</h3>
+          <p>${e.date}${e.location ? ', ' + e.location : ''}</p>
+          <p class="card-text"><a href="${e.link}" class="btn btn-sm btn-outline-primary" target="_blank" rel="noopener">More Info</a></p>
+        </div>
+      </div>
+    `;
+  }
+
+  document.getElementById('upcoming-events').innerHTML = upcoming.map(renderEvent).join('');
+});
+</script>

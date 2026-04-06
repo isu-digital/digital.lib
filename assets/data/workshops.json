@@ -1,0 +1,20 @@
+---
+# json for upcoming and past workshops lists on Learn page
+---
+
+[
+  {% assign workshops = site.data['dsi-workshops'] %}
+  {% for workshop in workshops %}
+    {
+      "name": {{ workshop.name | jsonify }},
+      "date": {{ workshop.date | jsonify }},
+      "date-iso": {{ workshop['date-iso'] | jsonify }},
+      "time": {{ workshop.time | jsonify }},
+      "location": {{ workshop.location | jsonify }},
+      "description": {{ workshop.description | jsonify }},
+      "link": {{ workshop.link | jsonify }},
+      "image": {{ workshop.image | jsonify }},
+      "image_alt": {{ workshop.image_alt | jsonify }}
+    }{% unless forloop.last %},{% endunless %}
+  {% endfor %}
+]
