@@ -20,7 +20,7 @@ View the full schedule below.
 
 **Questions?** Contact Michael Cummings, Digital Scholarship Librarian, [mrc2@iastate.edu](mailto:mrc2@iastate.edu)
 
-<a class="btn btn-primary btn-lg" href="https://forms.office.com/r/4a19RgJFC4">Apply Today</a>
+**Applications are now closed.**
 
 ## Schedule
 {:.pb-0}
