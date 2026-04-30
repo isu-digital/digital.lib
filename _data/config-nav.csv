@@ -1,5 +1,7 @@
 display_name,stub,dropdown_parent
-People,/people/,
+About Us,
+About,/about.html,About Us
+People,/people/,About Us
 Projects,/projects/
 Collaborate,/collaborate.html,
 News,/news.html,

@@ -38,6 +38,24 @@
     color: #7c2529 !important;
 }
 
+.dropdown-item {
+    color: #c8102e;
+    font-family: Arial,Helvetica Neue,sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.625;
+}
+
+.dropdown-item:hover {
+    color: #7c2529;
+    background-color: transparent;
+}
+
+.dropdown-item.active {
+    color: #7c2529;
+    background-color: transparent;
+}
+
 .hidden {
     display: none;
 }

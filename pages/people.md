@@ -3,7 +3,6 @@ title: People
 nav: People
 permalink: /people/
 layout: page
-nav_order: 1
 ---
 
 {%- assign staff = site.data.dsi-people | where_exp: 's', 's.title != "Student"' -%}
