@@ -28,9 +28,11 @@ layout: page-narrow
     </div>
 </div>
 
-<div class="text-center">
+<!--<div class="text-center">
     <a class="btn btn-primary btn-lg mb-4" href="https://go.iastate.edu/UW4ETU">Apply Today!</a>
-</div>
+</div>-->
+
+**Please note that applications for the Digital Inquiry Fellowship are now closed.**
 
 ***Questions?*** Contact **[Erin Ridnour](mailto:emanders@iastate.edu)**, Digital Scholarship Librarian.
 
@@ -45,7 +47,7 @@ These fellowships offer paid, mentored opportunities for graduate students to ex
 
 Fellowships will run from the **beginning of Fall semester 2026 to the end of March 2027**. Fellows will receive a **stipend of $2,500**. 
 
-Students should apply if they are interested in expanding their research toolkit, gaining hands-on experience with in-demand digital skills, and making meaningful progress on a project or area of inquiry. Fellows will produce outcomes that they can publish, and will have opporutnities present their outcomes at the library's annual [Digital Scholarship Symposium](https://instr.iastate.libguides.com/DSSymposium) and participate in other library workshops and events.
+Students should apply if they are interested in expanding their research toolkit, gaining hands-on experience with in-demand digital skills, and making meaningful progress on a project or area of inquiry. Fellows will produce outcomes that they can publish, and will have opportunities present their outcomes at the library's annual [Digital Scholarship Symposium](https://instr.iastate.libguides.com/DSSymposium) and participate in other library workshops and events.
 
 ### Fellowship Options
 {:.pb-0}
@@ -100,6 +102,8 @@ Applicants should choose from one of the fellowship options below. Not sure whic
 ## How to Apply
 {:.pb-0}
 
+**Applications for the Digital Inquiry Fellowship are now closed.**
+
 Applicants must submit:
 
 1. **Fellowship proposal (500 words or less):**
@@ -121,11 +125,10 @@ A short narrative describing:
     <a class="btn btn-primary btn-lg mb-4" href="https://forms.office.com/r/tTfhGzDrXD">Submit an Application</a>
 </div>-->
 
-<div class="text-center">
+<!--<div class="text-center">
     <a class="btn btn-primary btn-lg mb-4" href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=mthHA3QB002t6zM5yJw19TQETJXbZkdJi0DMN35mo1dUMDlJRUtOQUEwQjFNNTBNWTk2M0E4VE1MOC4u" target="_blank" rel="noopener noreferrer">Apply Today!</a>
-</div>
+</div>-->
 
-**Applications will be accepted through June 1st.**
 
 ---
 

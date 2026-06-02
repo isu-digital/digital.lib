@@ -53,5 +53,7 @@ permalink: /collaborate.html
 
 The **Digital Inquiry Fellowship** offers paid, mentored opportunities for graduate students to explore and apply digital methods to their research or teaching. Fellows work with Digital Scholarship Librarians to either build a project or explore a methodology, and present their outcomes at the annual Digital Scholarship Symposium.
 
+**Applications for the Digital Inquiry Fellowship are now closed.**
 
-[Learn more and apply](/learn/fellowship.html){:.btn .btn-primary}
+
+[Learn more](/learn/fellowship.html){:.btn .btn-primary}
