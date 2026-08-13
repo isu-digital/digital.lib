@@ -89,6 +89,23 @@
     let currentStatusFilter = 'all';
     let currentTypeFilter = 'all';
 
+    function applyProjectFilters() {
+        documentList.filter(function(item) {
+            var status = item.values().listGenre || '';
+            var type = item.values().listType || '';
+            var statusMatch = (currentStatusFilter === 'all' || status === currentStatusFilter);
+            var typeMatch = (currentTypeFilter === 'all' || type === currentTypeFilter);
+            return statusMatch && typeMatch;
+        });
+
+        var searchTerm = (document.getElementById('listSearch') || {}).value || '';
+        if (searchTerm.trim()) {
+            documentList.search(searchTerm);
+        } else {
+            documentList.search();
+        }
+    }
+
     function filterProjects(value, filterType, button) {
         if (filterType === 'status') {
             currentStatusFilter = value;
@@ -104,13 +121,7 @@
             }
         }
 
-        // filter the documentList based on the selected filters
-        documentList.filter(function(item) {
-            var statusMatch = (currentStatusFilter === 'all' || item.values().listGenre === currentStatusFilter);
-            var typeMatch = (currentTypeFilter === 'all' || item.values().listType === currentTypeFilter);
-
-            return statusMatch && typeMatch;
-        });
+        applyProjectFilters();
     }
 
     function setActiveButton(button, filterType) {
@@ -128,11 +139,13 @@
         documentList.filter();
         documentList.clear();
         documentList.add(listDocs);
-        filterByType();
+        applyProjectFilters();
     }
 
     var shuffleListBtn = document.getElementById("list_shuffle");
-    shuffleListBtn.addEventListener("click", shuffleList);
+    if (shuffleListBtn) {
+        shuffleListBtn.addEventListener("click", shuffleList);
+    }
 
     /* get query string */
     document.addEventListener('DOMContentLoaded', function(event) {
@@ -144,7 +157,6 @@
         // ?filter=
         if (queryString.has("filter") && document.getElementById(queryString.get("filter"))) { 
             document.getElementById(queryString.get("filter")).click();
-            filterByType();
         }
         // ?search=
         if (queryString.has("search")) { 
@@ -152,7 +164,13 @@
             document.getElementById("listSearch").value = searchOption;
             documentList.search(searchOption);
         }
-
     });
+
+    var listSearchInput = document.getElementById('listSearch');
+    if (listSearchInput) {
+        listSearchInput.addEventListener('input', function() {
+            applyProjectFilters();
+        });
+    }
 
 </script>
