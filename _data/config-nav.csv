@@ -1,8 +1,11 @@
 display_name,stub,dropdown_parent
-About Us,
-About,/about.html,About Us
-People,/people/,About Us
+About,
+Mission,/about.html,About
+People,/people/,About
 Projects,/projects/
 Collaborate,/collaborate.html,
 News,/news.html,
-Learn,/learn/,
+Opportunities,
+Learn,/learn/,Opportunities
+Summer Institute,/learn/summer-institute.html,Opportunities
+Fellowship,/learn/fellowship.html,Opportunities
