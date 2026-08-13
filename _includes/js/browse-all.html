@@ -1,176 +1,213 @@
-<script src="{{ '/assets/lib/list.min.js' | relative_url }}"></script>
 <script>
-    /* Fisher-Yates shuffle https://bost.ocks.org/mike/shuffle/ */
-    function shuffle(array) {
-        var m = array.length, t, i;
-        while (m) {
-            i = Math.floor(Math.random() * m--);
-            t = array[m];
-            array[m] = array[i];
-            array[i] = t;
-        }
-        return array;
-    }
-    // add items
-    var listDocs = [
-        {% assign listDocs = site.data.dsi-research-projects | where_exp: 'i','i.ignore != true' %}
-        {% for i in listDocs %}
-        { 
-            {% if i.image %}listImg: "{{ i.image | relative_url }}", listImgAlt: "{{ i.image_alt }}",{% endif %}
-            listLink: "{{ i.link | relative_url }}", 
-            listTitle: {{ i.title | jsonify }},
-            {% if i.type %}listType: "{{ i.type }}",{% endif %} 
-            {% if i.status %}listGenre: "{{ i.status }}",{% endif %}
-            listText: {{ i.description | default: i.content | strip_html | truncatewords: 25 | jsonify }} 
-        }{% unless forloop.last %},{% endunless %}
-        {% endfor %}
-    ];
-    // shuffle items
-    shuffle(listDocs);
-    var listOptions = {
-        valueNames: [ 
-            'listTitle',
-            'listType',
-            'listGenre',
-            'listText'
-        ],
-        item: function(values) {
-            // assign colors based on project type
-            var borderColor = "";
-            var cardImg = "";
-            var cardGenre = "";
-            var cardType = "";
-            switch (values.listType) {
-                case "exhibit":
-                    borderColor = "border-success";
-                    break;
-                case "workshop":
-                    borderColor = "border-primary";
-                    break;
-                case "collections as data":
-                    borderColor = "border-danger";
-                    break;
-                case "digital collection":
-                    borderColor = "border-warning";
-                    break;
-                case "student project":
-                    borderColor = "border-info";
-                    break;
-                case "digital scholarship":
-                    borderColor = "border-secondary";
-                    break;
-                default:
-                    borderColor = "";
-            }
-            if(values.listImg) {
-                cardImg = `<p class="text-center"><img src="${values.listImg}" class="img-fluid list-img" alt="${values.listImgAlt}"></p>`;
-            } 
-            if(values.listGenre) { 
-                cardGenre = `${values.listGenre.split(";").join(" ;")}`;
-            }
-            if(values.listType) {
-                cardType = `${values.listType.split(";").join("; ")}`;
-            } 
-            var card = `<div class="col-md-3">
-                <div class="card mb-3 ${borderColor} project-card" data-status="${cardGenre}" data-type="${values.listType}">
-                    <div class="card-body">
-                        <h3 class="card-title mt-0"><a class="listTitle" href="${values.listLink}" target="_blank" rel="noopener">${values.listTitle}</a></h3>
-                        <p class="card-text"><strong class="listType">${cardType}</strong><span class="hidden">${cardGenre}</span></p>${cardImg}
-                        <p class="card-text"><span class="listText">${values.listText}</span></p>
-                    </div>
-                </div>
-            </div>`;
-            return card;
-        }
-    };
-    // init list.js
-    var documentList = new List('documentList', listOptions, listDocs);
+    (function() {
+        const projectData = [
+            {% assign listDocs = site.data.dsi-research-projects | where_exp: 'i','i.ignore != true' %}
+            {% for i in listDocs %}
+            {
+                title: {{ i.title | jsonify }},
+                link: {{ i.link | relative_url | jsonify }},
+                image: {% if i.image %}{{ i.image | relative_url | jsonify }}{% else %}null{% endif %},
+                imageAlt: {{ i.image_alt | default: i.title | jsonify }},
+                type: {{ i.type | default: '' | jsonify }},
+                status: {{ i.status | default: 'unknown' | jsonify }},
+                subjects: {{ i.subjects | default: '' | jsonify }}
+            }{% unless forloop.last %},{% endunless %}
+            {% endfor %}
+        ];
 
-    let currentStatusFilter = 'all';
-    let currentTypeFilter = 'all';
+        for (let index = projectData.length - 1; index > 0; index -= 1) {
+            const randomIndex = Math.floor(Math.random() * (index + 1));
+            const project = projectData[index];
+            projectData[index] = projectData[randomIndex];
+            projectData[randomIndex] = project;
+        }
 
-    function applyProjectFilters() {
-        documentList.filter(function(item) {
-            var status = item.values().listGenre || '';
-            var type = item.values().listType || '';
-            var statusMatch = (currentStatusFilter === 'all' || status === currentStatusFilter);
-            var typeMatch = (currentTypeFilter === 'all' || type === currentTypeFilter);
-            return statusMatch && typeMatch;
+        const projectBrowse = document.getElementById('projectBrowse');
+        const projectCards = document.getElementById('projectCards');
+        const topSearchInput = document.getElementById('topProjectSearch');
+        const topSearchButton = document.getElementById('topProjectSearchButton');
+        const searchInput = document.getElementById('projectSearch');
+        const typeSelect = document.getElementById('projectType');
+        const topTopicFilters = document.getElementById('topTopicFilters');
+        const topicFilters = document.getElementById('topicFilters');
+
+        if (!projectBrowse || !projectCards || !searchInput || !typeSelect || !topicFilters) {
+            return;
+        }
+
+        const searchInputs = [topSearchInput, searchInput].filter(Boolean);
+        const topicFilterGroups = [topTopicFilters, topicFilters].filter(Boolean);
+
+        let activeTopic = 'all';
+        let activeType = 'all';
+        let searchTerm = '';
+
+        function getBorderClass(type) {
+            const palette = {
+                exhibit: 'border-success',
+                workshop: 'border-primary',
+                'collections as data': 'border-danger',
+                'digital collection': 'border-warning',
+                'student project': 'border-info',
+                'digital scholarship': 'border-secondary'
+            };
+            return palette[type] || 'border-secondary';
+        }
+
+        function normalizeSubject(value) {
+            return (value || '').split(';').map(function(part) {
+                return part.trim();
+            }).filter(Boolean);
+        }
+
+        function normalizeType(value) {
+            return (value || '').split(';').map(function(part) {
+                return part.trim();
+            }).filter(Boolean);
+        }
+
+        function renderTypeOptions() {
+            const types = [];
+
+            projectData.forEach(function(project) {
+                normalizeType(project.type).forEach(function(type) {
+                    if (!types.includes(type)) {
+                        types.push(type);
+                    }
+                });
+            });
+
+            types.sort();
+            typeSelect.innerHTML = '<option value="all">All types</option>' + types.map(function(type) {
+                return '<option value="' + type + '">' + type + '</option>';
+            }).join('');
+        }
+
+        function getTopTopics() {
+            const counts = {};
+
+            projectData.forEach(function(project) {
+                normalizeSubject(project.subjects).forEach(function(subject) {
+                    counts[subject] = (counts[subject] || 0) + 1;
+                });
+            });
+
+            return Object.entries(counts)
+                .sort(function(a, b) {
+                    return b[1] - a[1];
+                })
+                .slice(0, 8)
+                .map(function(entry) {
+                    return entry[0];
+                });
+        }
+
+        function renderTopicFilters(container) {
+            const topTopics = getTopTopics();
+            const buttons = [
+                '<button type="button" class="btn btn-sm btn-outline-primary ' + (activeTopic === 'all' ? 'active' : '') + '" data-topic="all">All</button>'
+            ];
+
+            topTopics.forEach(function(topic) {
+                buttons.push('<button type="button" class="btn btn-sm btn-outline-primary ' + (activeTopic === topic ? 'active' : '') + '" data-topic="' + topic + '">' + topic + '</button>');
+            });
+
+            container.innerHTML = buttons.join('');
+
+            const topicButtons = Array.from(container.querySelectorAll('[data-topic]'));
+            topicButtons.forEach(function(button) {
+                button.addEventListener('click', function() {
+                    activeTopic = button.dataset.topic;
+                    renderTopicFiltersForAll();
+                    renderCards();
+                });
+            });
+        }
+
+        function renderTopicFiltersForAll() {
+            topicFilterGroups.forEach(function(container) {
+                renderTopicFilters(container);
+            });
+        }
+
+        function renderCards() {
+            const filtered = projectData.filter(function(project) {
+                const projectSubjects = normalizeSubject(project.subjects);
+                const matchesTopic = activeTopic === 'all' || projectSubjects.includes(activeTopic);
+                const projectTypes = normalizeType(project.type);
+                const matchesType = activeType === 'all' || projectTypes.includes(activeType);
+                const haystack = [project.title, project.type, project.status, project.subjects].join(' ').toLowerCase();
+                const matchesSearch = !searchTerm || haystack.includes(searchTerm.toLowerCase());
+                return matchesTopic && matchesType && matchesSearch;
+            });
+
+            if (!filtered.length) {
+                projectCards.innerHTML = '<div class="col-12"><div class="alert alert-light border">No projects match your current search.</div></div>';
+                return;
+            }
+
+            projectCards.innerHTML = filtered.map(function(project) {
+                const image = project.image ? '<p class="text-center mb-3"><img src="' + project.image + '" class="img-fluid list-img" alt="' + project.imageAlt + '"></p>' : '';
+                const projectTypes = normalizeType(project.type);
+                const subjectList = normalizeSubject(project.subjects).slice(0, 3).join(' • ');
+
+                return '<div class="col">' +
+                    '<div class="card h-100 border ' + getBorderClass(projectTypes[0]) + ' shadow-sm project-card">' +
+                        '<div class="card-body d-flex flex-column">' +
+                            '<h3 class="card-title mt-0"><a href="' + project.link + '" target="_blank" rel="noopener">' + project.title + '</a></h3>' +
+                            '<p class="mb-2"><strong>' + (projectTypes.length ? projectTypes.join(' • ') : 'Project') + '</strong></p>' +
+                            image +
+                            (subjectList ? '<div class="small text-muted mb-2">' + subjectList + '</div>' : '') +
+                            '<div class="mt-auto pt-2"><a class="btn btn-sm btn-outline-primary" href="' + project.link + '" target="_blank" rel="noopener">Explore project</a></div>' +
+                        '</div>' +
+                    '</div>' +
+                '</div>';
+            }).join('');
+        }
+
+        typeSelect.addEventListener('change', function(event) {
+            activeType = event.target.value;
+            renderCards();
         });
 
-        var searchTerm = (document.getElementById('listSearch') || {}).value || '';
-        if (searchTerm.trim()) {
-            documentList.search(searchTerm);
-        } else {
-            documentList.search();
-        }
-    }
-
-    function filterProjects(value, filterType, button) {
-        if (filterType === 'status') {
-            currentStatusFilter = value;
-            setActiveButton(button, 'status');
-            if (value !== 'all') {
-                document.getElementById('filter-all-status').checked = false;
-            }
-        } else if (filterType === 'type') {
-            currentTypeFilter = value;
-            setActiveButton(button, 'type');
-            if (value !== 'all') {
-                document.getElementById('filter-all').checked = false;
-            }
+        function updateSearch(value) {
+            searchTerm = value.trim();
+            searchInputs.forEach(function(input) {
+                input.value = value;
+            });
+            renderCards();
         }
 
-        applyProjectFilters();
-    }
+        function submitTopSearch() {
+            updateSearch(topSearchInput.value);
+            projectBrowse.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            searchInput.focus();
+            searchInput.select();
+        }
 
-    function setActiveButton(button, filterType) {
-        var buttonGroup = button.parentElement;
-        var buttons = buttonGroup.querySelectorAll('.btn');
-        buttons.forEach(function(btn) {
-            btn.classList.remove('active');
+        searchInput.addEventListener('input', function(event) {
+            updateSearch(event.target.value);
         });
-        button.classList.add('active');
-    }
 
-    // add random shuffle
-    function shuffleList() {
-        shuffle(listDocs);
-        documentList.filter();
-        documentList.clear();
-        documentList.add(listDocs);
-        applyProjectFilters();
-    }
+        if (topSearchInput) {
+            topSearchInput.addEventListener('input', function(event) {
+                updateSearch(event.target.value);
+            });
 
-    var shuffleListBtn = document.getElementById("list_shuffle");
-    if (shuffleListBtn) {
-        shuffleListBtn.addEventListener("click", shuffleList);
-    }
-
-    /* get query string */
-    document.addEventListener('DOMContentLoaded', function(event) {
-        var queryString = new URLSearchParams(window.location.search);
-        // ?sort=
-        if (queryString.has("sort") && document.getElementById(queryString.get("sort"))) { 
-            document.getElementById(queryString.get("sort")).click();
+            topSearchInput.addEventListener('keydown', function(event) {
+                if (event.key === 'Enter') {
+                    event.preventDefault();
+                    submitTopSearch();
+                }
+            });
         }
-        // ?filter=
-        if (queryString.has("filter") && document.getElementById(queryString.get("filter"))) { 
-            document.getElementById(queryString.get("filter")).click();
-        }
-        // ?search=
-        if (queryString.has("search")) { 
-            var searchOption = queryString.get("search");
-            document.getElementById("listSearch").value = searchOption;
-            documentList.search(searchOption);
-        }
-    });
 
-    var listSearchInput = document.getElementById('listSearch');
-    if (listSearchInput) {
-        listSearchInput.addEventListener('input', function() {
-            applyProjectFilters();
-        });
-    }
+        if (topSearchButton) {
+            topSearchButton.addEventListener('click', submitTopSearch);
+        }
 
+        renderTypeOptions();
+        renderTopicFiltersForAll();
+        renderCards();
+    })();
 </script>
