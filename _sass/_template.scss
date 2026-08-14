@@ -44,8 +44,19 @@ body {
         }
     }
 }
-/* remove link underline */ 
+/* keep inline links distinguishable from surrounding text */
 a { text-decoration: none; }
+p a:not(.btn):not(.nav-link):not(.navbar-brand) {
+    text-decoration: underline;
+    text-underline-offset: .1em;
+}
+li:not(.nav-item):not(.breadcrumb-item) a:not(.btn):not(.nav-link):not(.navbar-brand) {
+    text-decoration: underline;
+    text-underline-offset: .1em;
+}
+header p a:not(.btn):not(.nav-link):not(.navbar-brand) {
+    text-decoration: none;
+}
 
 /* narrow container */ 
 @if variable-exists(container-narrow) { 
@@ -139,7 +150,8 @@ body {
     overflow-x: hidden;
 }
 
-p a:hover {
+p a:hover,
+li:not(.nav-item) a:hover {
     color: #c8102e
 }
 
