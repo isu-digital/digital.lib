@@ -1,4 +1,26 @@
 /* header */
+.library-brand {
+    display: inline-block;
+    color: #c8102e;
+    font-size: 1rem;
+    line-height: 1.4375;
+    font-weight: 700;
+    margin-top: 0.375rem;
+}
+
+.library-brand img {
+    display: block;
+}
+
+.library-brand p {
+    margin-top: 0.375rem;
+    margin-bottom: 1rem;
+}
+
+.library-brand:hover {
+    color: #c8102e;
+}
+
 .dsi-site-title {
     max-width: 15.625rem;
     color: #7c2529;
