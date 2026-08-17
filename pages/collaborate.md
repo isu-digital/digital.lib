@@ -4,7 +4,7 @@ title: Collaborate With Us
 nav: Collaborate
 permalink: /collaborate.html
 ---
-{% include jumbotron.html heading="Our Expertise" text="We specialize in a variety of digital methods and skills, including: **GIS** &middot; **Text analysis** &middot; **Data visualization** &middot; **Digital storytelling** &middot; **Static web development** &middot; **Digital pedagogy**." %}
+{% include jumbotron.html heading="Our Expertise" text="We specialize in a variety of digital methods and skills, including: **GIS** &middot; **Text analysis** &middot; **Data visualization** &middot; **Digital storytelling** &middot; **Static web development** &middot; **Digital pedagogy**" %}
 
 <div class="row align-items-center g-4 mb-5 mt-4">
     <div class="col-md-7">
