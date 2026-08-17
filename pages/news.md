@@ -53,7 +53,7 @@ permalink: /news.html
 }
 .post-meta {
   font-size: 0.9em;
-  color: #999;
+  color: #666;
   margin-top: 0.5em;
 }
 @media (max-width: 1024px) {
