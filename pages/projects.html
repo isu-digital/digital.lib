@@ -20,12 +20,12 @@ foot: js/browse-all.html
     {% assign random_projects = current_projects %}
     {% endif %}
     {% for p in random_projects %}
-    <div class="col-md-3">
-        <div class="card mb-3">
+    <div class="col-md-3 d-flex mb-3">
+        <div class="card w-100 d-flex flex-column featured-card-fixed">
             {% if p.image %}
-            <img src="{{ p.image | relative_url }}" class="featured-banner" alt="{{ p.image_alt | default: p.title }}">
+            <img src="{{ p.image | relative_url }}" class="featured-banner" style="object-position: {{ p.image_position | default: 'center' }};" alt="{{ p.image_alt | default: p.title }}">
             {% endif %}
-            <div class="card-body py-2 px-3">
+            <div class="card-body py-2 px-3 mt-auto">
                 <h3 class="card-title mt-0 mb-0 fs-6 featured-title"><a href="{{ p.link | relative_url }}" target="_blank" rel="noopener">{{ p.title }}</a></h3>
             </div>
         </div>
