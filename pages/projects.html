@@ -8,32 +8,11 @@ foot: js/browse-all.html
 
 {% assign current_projects = site.data.dsi-research-projects | where_exp: 'p', 'p.status == "in-progress"' %}
 
-<p>Digital Scholarship and Initiatives conducts research and provides project support and collaboration with students, faculty, and staff from across campus.</p>
+<p class="mb-2">Digital Scholarship and Initiatives conducts research and provides project support and collaboration with students, faculty, and staff from across campus.</p>
 
-<div class="card border-0 bg-light mt-4">
-    <div class="card-body py-4 px-4 px-md-5">
-        <div class="row align-items-center justify-content-center">
-            <div class="col-lg-8 text-center text-lg-start">
-                <h2 class="mb-2">Explore our projects</h2>
-                <p class="text-muted mb-3">Search by keyword, topic, or project type to discover the work across our digital scholarship portfolio.</p>
-            </div>
-            <div class="col-lg-4">
-                <div class="d-flex flex-column gap-2">
-                    <input type="search" id="topProjectSearch" class="form-control form-control-lg" placeholder="Search projects" aria-label="Search projects">
-                    <button type="button" id="topProjectSearchButton" class="btn btn-primary btn-lg">Search projects</button>
-                </div>
-            </div>
-        </div>
-        <div class="mt-4">
-            <p class="mb-2"><strong>Popular topics</strong></p>
-            <div id="topTopicFilters" class="d-flex flex-wrap gap-2"></div>
-        </div>
-    </div>
-</div>
-
-<div class="row mt-2 mb-4">
+<div class="row mt-0 mb-4 px-3 px-md-0">
     <div class="col-12">
-        <h2 class="pb-2 mb-3">Featured Projects</h2>
+        <h2 class="mt-0 pb-0 mb-3">Featured Projects</h2>
     </div>
     {% if current_projects.size > 4 %}
     {% assign random_projects = current_projects | sample: 4 %}
@@ -42,43 +21,43 @@ foot: js/browse-all.html
     {% endif %}
     {% for p in random_projects %}
     <div class="col-md-3">
-        <div class="card mb-3 border-info h-100">
-            <div class="card-body d-flex flex-column">
-                <h3 class="card-title mt-0"><a href="{{ p.link | relative_url }}" target="_blank" rel="noopener">{{ p.title }}</a></h3>
-                <img src="{{ p.image }}" class="img-fluid list-img" alt="{{ p.image_alt }}">
+        <div class="card mb-3">
+            {% if p.image %}
+            <img src="{{ p.image | relative_url }}" class="featured-banner" alt="{{ p.image_alt | default: p.title }}">
+            {% endif %}
+            <div class="card-body py-2 px-3">
+                <h3 class="card-title mt-0 mb-0 fs-6 featured-title"><a href="{{ p.link | relative_url }}" target="_blank" rel="noopener">{{ p.title }}</a></h3>
             </div>
         </div>
     </div>
     {% endfor %}
 </div>
 
-<div id="projectBrowse" class="mt-5 pt-5 border-top">
+<div id="projectBrowse" class="card border-0 bg-light mt-4">
 {% assign listProjects = site.data.dsi-research-projects | where_exp: 'i','i.ignore != true' %}
-    <div class="row">
-        <div class="col-12">
-            <p class="text-uppercase small fw-bold text-muted mb-2">Explore the full archive</p>
-            <h2 class="mt-0 pb-0 mb-1">Browse all projects</h2>
-            <p class="text-muted mb-4">Use the filters below to narrow the full project archive.</p>
+    <div class="card-body py-4 px-4 px-md-5">
+        <p class="text-uppercase small fw-bold text-muted mb-2">Search &amp; filter</p>
+        <h2 class="mt-0 pb-0 mb-1">Explore our projects</h2>
+        <p class="text-muted mb-4">Search by keyword, topic, or project type to discover the work across our digital scholarship portfolio.</p>
 
-            <div class="row g-3 align-items-end mb-4">
-                <div class="col-md-8">
-                    <label for="projectSearch" class="form-label"><strong>Search</strong></label>
-                    <input type="search" id="projectSearch" class="form-control form-control-lg" placeholder="Search by title, topic, or keyword" aria-label="Search projects">
-                </div>
-                <div class="col-md-4">
-                    <label for="projectType" class="form-label"><strong>Type</strong></label>
-                    <select id="projectType" class="form-select form-select-lg" aria-label="Filter projects by type">
-                        <option value="all">All types</option>
-                    </select>
-                </div>
+        <div class="row g-3 align-items-end mb-4">
+            <div class="col-md-8">
+                <label for="projectSearch" class="form-label"><strong>Search</strong></label>
+                <input type="search" id="projectSearch" class="form-control form-control-lg" placeholder="Search by title, topic, or keyword" aria-label="Search projects">
             </div>
-
-            <div class="mb-4">
-                <p class="mb-2"><strong>Browse by topic</strong></p>
-                <div id="topicFilters" class="d-flex flex-wrap gap-2"></div>
+            <div class="col-md-4">
+                <label for="projectType" class="form-label"><strong>Type</strong></label>
+                <select id="projectType" class="form-select form-select-lg" aria-label="Filter projects by type">
+                    <option value="all">All types</option>
+                </select>
             </div>
         </div>
-    </div>
 
-    <div id="projectCards" class="mt-4 row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4"></div>
+        <div class="mb-2">
+            <p class="mb-2"><strong>Popular topics</strong></p>
+            <div id="topicFilters" class="d-flex flex-wrap gap-2"></div>
+        </div>
+    </div>
 </div>
+
+<div id="projectCards" class="mt-4 row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4"></div>

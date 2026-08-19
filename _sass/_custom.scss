@@ -109,6 +109,16 @@
     object-fit: cover;
 }
 
+.featured-banner {
+    width: 100%;
+    height: 80px;
+    object-fit: cover;
+}
+
+.featured-title a:hover {
+    color: #c8102e;
+}
+
 .featured-image-post {
     width: 100%;
     height: 200px;
