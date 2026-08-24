@@ -9,6 +9,34 @@ layout: workshop-archive
 
 Explore past workshops and events hosted, sponsored, or partnered on by Digital Scholarship and Initiatives. (Alternatively, [see current events](/learn/).)
 
+## 2026
+{:.pb-0}
+
+{% assign workshops2026 = workshops | where_exp: 'w', 'w.date-iso contains "2026"' -%}
+{% assign events2026 = events | where_exp: 'e', 'e.date-iso contains "2026"' -%}
+<div class="row ps-5">
+    {%- if workshops2026.size > 0 -%}
+    <div class="col-md-12">
+    <p class="fs-4 fw-bold text-cardinal ps-5 ps-md-0">Workshops</p>
+    <ul>
+        {%- for w in workshops2026 -%}
+        <li><a class="fs-5 fw-bold text-primary text-decoration-underline" href="{{ w.link }}" target="_blank" rel="noopener">{{ w.name }}</a> ({{ w.date }})</li>
+        {%- endfor -%}
+    </ul>
+    </div>
+    {%- endif -%}
+    {%- if events2026.size > 0 -%}
+    <div class="col-md-12">
+        <p class="fs-4 fw-bold text-cardinal ps-5 ps-md-0">Events</p>
+        <ul>
+            {%- for e in events2026 -%}{%- if e.past == "true" -%}
+            <li><a class="fs-5 fw-bold text-primary text-decoration-underline" href="{{ e.link }}" target="_blank" rel="noopener">{{ e.name }}</a> ({{ e.date }})</li>
+            {%- endif -%}{%- endfor -%}
+        </ul>
+    </div>
+    {%- endif -%}
+</div>
+
 ## 2025
 {:.pb-0}
 
