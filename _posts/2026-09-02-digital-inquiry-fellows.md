@@ -1,12 +1,10 @@
 ---
 layout: post
 title: DSI Launches Inaugural Digital Inquiry Fellowship
-date: 2026-09-01
+date: 2026-09-02
 author: Michael
 excerpt: The Digital Inquiry Fellowship offers graduate students mentored opportunities to explore and apply digital methods to their research or teaching.
 tags: fellowship projects 
-image: 
-image-alt: 
 ---
 
 Digital Scholarship and Initiatives (DSI) is proud to announce the launch of our first-ever Digital Inquiry Fellowship, welcoming to inaugural Fellows: Bahar Hashemian Esfahani and Sean Glasshoff. 
