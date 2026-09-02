@@ -11,11 +11,11 @@ Digital Scholarship and Initiatives (DSI) is proud to announce the launch of our
 
 The Digital Inquiry Fellowship offers graduate students mentored opportunities to explore and apply digital methods to their research or teaching. Over the course of the next seven months, Fellows will work to develop original digital projects under the guidance of a Digital Scholarship Librarian, culminating in a public presentation at the Digital Scholarship Symposium in March 2027. 
 
-{% include figure.html img="/assets/img/Bahar.png" width="50%" alt="Bahar Hashemian Esfahani" %}
+{% include figure.html img="/assets/img/Bahar.png" width="40%" alt="Bahar Hashemian Esfahani" %}
 
 Bahar Hashemian Esfahani is a Ph.D. candidate in Apparel, Merchandising and Design in the Department of Apparel, Events, and Hospitality Management. Her research focuses on functional, adaptive, medical, and protective apparel, with an emphasis on human-centered design, soft-goods product development, and improving comfort, safety, accessibility, and quality of life through clothing. Esfahani will develop "Closure Logic: Mapping Fasteners in Adaptive and Functional Clothing," a project which will examine how closure systems are used across adaptive apparel, medical and health-related garments, and selected occupational clothing, using digital methods to organize design information, identify patterns and gaps, and create a resource that can help future designers develop more inclusive, functional, and human-centered apparel solutions that improve people's lives. 
 
-{% include figure.html img="/assets/img/Sean.png" width="50%" alt="Sean Glasshoff" %}
+{% include figure.html img="/assets/img/Sean.png" width="40%" alt="Sean Glasshoff" %}
 
 Sean Glasshoff is a master's student in Soil Science in the Department of Agronomy. His research uses a microscopic analysis of soil structure and porosity, while also characterizing soil properties such as organic matter, mineralogy, and redoximorphic features. These analyses will be paired with long-term climate and soil moisture data to improve USDA models of soil hydraulic conductivity and water retention. His project will create an open-access digital collection of Iowa State University's soil thin sections, preserving scientific resources and making them accessible to researchers and the public. The collection will combine high-resolution microscopic images with laboratory data, manuscripts, and other metadata using the open-source CollectionBuilder platform. Users will be able to view samples from across Iowa and the U.S., along with related documents and data. The project will also establish a documented workflow and standardized digitization practices. 
 
