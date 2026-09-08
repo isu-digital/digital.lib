@@ -5,7 +5,8 @@ permalink: /people/
 layout: page
 ---
 
-{%- assign staff = site.data.dsi-people | where_exp: 's', 's.title != "Student"' -%}
+{%- assign staff = site.data.dsi-people | where_exp: 's', 's.title != "Student" and s.title != "Digital Inquiry Fellow"' -%}
+{%- assign fellows = site.data.dsi-people | where_exp: 'f', 'f.title == "Digital Inquiry Fellow"' -%}
 {%- assign students = site.data.dsi-people | where_exp: 'p', 'p.title == "Student"' -%}
 
 ## Staff
@@ -29,6 +30,34 @@ layout: page
                 </div>
             </div>
         </div> 
+    {%- endfor -%}
+</div>
+
+## Digital Inquiry Fellows
+{:.pt-3 .pb-0}
+
+<div class="row">
+    {%- for f in fellows -%}
+        <div class="col-md-6">
+            <div class="row pt-3 pb-5 align-items-center">
+                <div class="col-md-5 text-center">
+                    <img class="img-fluid rounded-circle lazyload w-75" alt="image of {{ f.name }}" src="{{ f.image | relative_url }}">
+                </div>
+                <div class="col-md-7">
+                <p>
+                <strong>{{ f.name }}</strong>, {{ f.title }}
+                {% if f.program %}
+                <br>
+                <strong>Program:</strong> {{ f.program }}
+                {% endif %}
+                <br>
+                <a href="mailto:{{ f.email }}" class="text-decoration-underline">{{ f.email }}</a>
+                <br>
+                {% if f.phone %}<strong>{{ f.phone }}</strong>{% endif %}
+                </p>
+                </div>
+            </div>
+        </div>
     {%- endfor -%}
 </div>
 
