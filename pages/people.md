@@ -45,15 +45,11 @@ layout: page
                 </div>
                 <div class="col-md-7">
                 <p>
-                <strong>{{ f.name }}</strong>, {{ f.title }}
-                {% if f.program %}
+                <strong>{{ f.name }}</strong>, {{ f.degree }}, {{ f.program}}
+                {% if f.project %}
                 <br>
-                <strong>Program:</strong> {{ f.program }}
+                <strong>Project title:</strong> {{ f.project }}
                 {% endif %}
-                <br>
-                <a href="mailto:{{ f.email }}" class="text-decoration-underline">{{ f.email }}</a>
-                <br>
-                {% if f.phone %}<strong>{{ f.phone }}</strong>{% endif %}
                 </p>
                 </div>
             </div>

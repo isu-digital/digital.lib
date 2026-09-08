@@ -1,4 +1,4 @@
-image,name,title,department,email,phone,expertise,profile-page,program
+image,name,title,department,email,phone,expertise,profile-page,degree,program,project
 https://isuu00001library103stg.z21.web.core.windows.net/assets/media/digital-people/Wikle_Olivia.png,Olivia Wikle,Head of Digital Scholarship and Initiatives,Digital Scholarship and Initiatives,omwikle@iastate.edu,515-294-8590,,true
 https://isuu00001library103stg.z21.web.core.windows.net/assets/media/digital-people/Ghimire_Acharya_Samjhana.png,Samjhana Acharya,Digital Repository Assistant,Digital Scholarship and Initiatives,sacharya@iastate.edu,515-294-9650,Digital Repository,true
 https://isuu00001library103stg.z21.web.core.windows.net/assets/media/digital-people/Cummings_Michael.png,Michael Cummings,Digital Scholarship Librarian,Digital Scholarship and Initiatives,mrc2@iastate.edu,515-294-1439,Digital Scholarship,true
@@ -7,7 +7,7 @@ https://isuu00001library103stg.z21.web.core.windows.net/assets/media/digital-peo
 https://isuu00001library103stg.z21.web.core.windows.net/assets/media/digital-people/Shelley_Anne.png,Anne Shelley,Digital Repository Services Librarian,Digital Scholarship and Initiatives,aeshelle@iastate.edu,515-294-2334,Digital Repository,true
 https://isuu00001library103stg.z21.web.core.windows.net/assets/media/digital-people/Smith_Lorrie.png,Lorrie Smith,Digital Repository Assistant III,Digital Scholarship and Initiatives,smithll@iastate.edu,515-294-5774,Digital Repository,true
 https://isuu00001library103stg.z21.web.core.windows.net/assets/media/digital-people/Sullivan_Laura.png,Laura Sullivan,Digital Collections Librarian,Digital Scholarship and Initiatives,lsulli12@iastate.edu,515-294-9680,Digital Collections,true
-assets/img/Bahar.png,Bahar Hashemian Esfahani,Digital Inquiry Fellow,,,,Digital Scholarship,,"Apparel, Merchandising, and Design"
-assets/img/Sean.png,Sean Glasshoff,Digital Inquiry Fellow,,,,Digital Scholarship,,Soil Science
+assets/img/Bahar.png,Bahar Hashemian Esfahani,Digital Inquiry Fellow,,,,Digital Scholarship,,Ph.D. candidate,"Apparel, Merchandising, and Design","Closure Logic: Mapping Fasteners in Adaptive and Functional Clothing"
+assets/img/Sean.png,Sean Glasshoff,Digital Inquiry Fellow,,,,Digital Scholarship,,M.S. candidate,Soil Science,"Soil Thin Section Repository"
 ,Maggi Wolfe,Student,,,,Digital Scholarship,
 ,Lilian Atchison,Student,,,,Digital Repository,
