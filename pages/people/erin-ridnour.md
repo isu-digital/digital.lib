@@ -15,7 +15,7 @@ bio:
   Her current research includes *Computers Reading Cookbooks*, a collections-as-data project utilizing community cookbooks from the Library’s Iowa Cookbook Collection. Using Python and natural language processing tools, she analyzes these cookbook texts to identify shared foodways, trace how dishes evolve over time, and surface both common and culturally distinct culinary traditions across Iowa communities. She is also building expertise in static web development and web mapping through the *Campus Cornerstones* project, which uses open-source GIS tools to connect historical maps, photographs, and texts in an interactive exploration of Iowa State University’s campus history.
 projects: 
  - title: Campus Cornerstones
-   link: https://isu-digital.github.io/historic-buildings/
+   link: https://digital.lib.iastate.edu/projects/campuscornerstones/
    image: https://isuu00001library103stg.z21.web.core.windows.net/assets/media/old-main_004_sm.jpg
    image_alt: "landscape view of Iowa State College campus in the late 1800s"
  - title: Computers Reading Cookbooks

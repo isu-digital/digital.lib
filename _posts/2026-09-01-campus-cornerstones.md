@@ -14,7 +14,7 @@ Digital Scholarship and Initiatives is pleased to announce the completion of a n
 {% include figure-float.html img="/assets/img/cc-homepage.jpg" width="75" link="https://digital.lib.iastate.edu/projects/campuscornerstones/" alt="screen capture of home page of Campus Cornerstones project website" %}
 
 ## Site Features
-Profile pages for 54 buildings constructed on ISU's campus from 1859-1900 contain brief "biographies," campus maps, and galleries of digitized historical photographs from the Library's Special Collections and University Archives. Much of the historical information for each building was drawn from H. Summerfield Day’s comprehensive history [*The Iowa State University Campus and Its Buildings: 1859-1979*](https://digitalcollections.lib.iastate.edu/cypubs/items/cypubs1073.html) published in 1980. Day was the University Architect from 1966-1975.
+Profile pages for [54 buildings](https://digital.lib.iastate.edu/projects/campuscornerstones/buildings.html) constructed on ISU's campus from 1859-1900 contain brief "biographies," campus maps, and galleries of digitized historical photographs from the Library's Special Collections and University Archives. Much of the historical information for each building was drawn from H. Summerfield Day’s comprehensive history [*The Iowa State University Campus and Its Buildings: 1859-1979*](https://digitalcollections.lib.iastate.edu/cypubs/items/cypubs1073.html) published in 1980. Day was the University Architect from 1966-1975.
 
 {% include figure.html img="/assets/img/news-img/cc-main-building.jpg" width="50%" alt="screen capture of the profile page for the Main Building" %}
 
