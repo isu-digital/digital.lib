@@ -139,7 +139,8 @@ Promise.all([
   const allEvents = events.concat(workshops);
   const today = new Date().toISOString().slice(0, 10);
   const upcoming = allEvents.filter(e => e['date-iso'] >= today)
-                           .sort((a, b) => a['date-iso'].localeCompare(b['date-iso']));
+                           .sort((a, b) => a['date-iso'].localeCompare(b['date-iso']))
+                           .slice(0, 4);
 
   function renderEvent(e) {
     return `
